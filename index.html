@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Кастомные элементы</title>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+   <nav class="menu">
+      <ul class="menu__list">
+         <li class="menu__link">
+            <a href="./pages/count.html" target="_blank">Обратный отсчет</a>
+         </li>
+         <li class="menu__link">
+            <a href="./pages/sliders.html" target="_blank">Слайдеры</a>
+         </li>
+         <li class="menu__link">
+            <a href="#blocks">Блоки</a>
+         </li>
+         <li class="menu__link">
+            <a href="#tabs">Табы</a>
+         </li>
+         <li class="menu__link">
+            <a href="#tabs">Аккардеон</a>
+         </li>
+         <li class="menu__link">
+            <a href="#select">Выпадающий список</a>
+         </li>
+         <li class="menu__link">
+            <a href="#toggle">Ползунки</a>
+         </li>
+         <li class="menu__link">
+            <a href="#checkbox">Чекбоксы</a>
+         </li>
+         <li class="menu__link">
+            <a href="#radio">Радиокнопки</a>
+         </li>
+      </ul>
+   </nav>
+   <main>
+      <h1>Кастомные элементы</h1>
+
+      <h2 id="select">Select. Выпадающий список</h2>
+
+      <div class="form-row">
+         <div class="form-column">
+            <h3>Только CSS</h3>
+            <div class="form-group-title">Выберите категорию:</div>
+            <div class="form-group">
+               <div class="select-wrapper">
+                  <select name="select-category" class="select">
+                     <option value="1">Заметки путешественника</option>
+                     <option value="2">Заметки программиста</option>
+                     <option value="3">Конспекты по учебе</option>
+                     <option value="4">Фотоальбом</option>
+                  </select>
+               </div>
+            </div>
+         </div>
+
+         <div class="form-column">
+            <h3>CSS и JS</h3>
+            <div class="form-group-title">Выберите категорию:</div>
+            <div class="form-group">
+               <div class="dropdown">
+                  <button class="dropdown__button">Заметки путешественника</button>
+                  <ul class="dropdown__list">
+                     <li class="dropdown__list-item" data-value="travel">Заметки путешественника</li>
+                     <li class="dropdown__list-item" data-value="codding">Заметки программиста</li>
+                     <li class="dropdown__list-item" data-value="lessons">Конспекты по учебе</li>
+                     <li class="dropdown__list-item" data-value="photo">Фотоальбом</li>
+                  </ul>
+                  <input type="text" name="select-category" value="" class="dropdown__input-hidden">
+               </div>
+            </div>
+         </div>
+      </div>
+      <h2 id="toggle">Ползунки</h2>
+      <div class="form-row">
+         <div class="form-column">
+            <label class="toggle_1">
+               <input type="checkbox" class="toggle__real">
+               <div class="toggle__div"></div>
+            </label>
+         </div>
+
+         <div class="form-column">
+            <!-- <div class="widget__body"> -->
+            <label class="toggle_2">
+               <input type="checkbox" class="toggle__real" name="comission">
+               <span class="toggle__fake"></span>
+               <span class="toggle__title">Услуги 0%</span>
+            </label>
+            <!-- </div> -->
+         </div>
+      </div>
+
+
+      <h2 id="checkbox">Чекбоксы</h2>
+      <div class="form-row">
+         <div class="form-column">
+            <div class="form-group-title">Выберите категорию:</div>
+            <div class="form-group">
+               <label>
+                  <input type="checkbox" name="coding-notes" class="real-checkbox">
+                  <span class="custom-checkbox"></span>
+                  Заметки программиста
+               </label>
+            </div>
+            <div class="form-group">
+               <label>
+                  <input type="checkbox" name="travel-notes" class="real-checkbox">
+                  <span class="custom-checkbox"></span>
+                  Заметки путешественника
+               </label>
+            </div>
+         </div>
+      </div>
+      <h2 id="radio">Радиокнопки</h2>
+      <div class="form-row">
+         <div class="form-column">
+            <div class="form-group-title">Выберите категорию:</div>
+            <div class="form-group">
+               <input type="radio" id="cat-coding" name="category" value="coding-notes" class="real-radio">
+               <span class="custom-radio"></span>
+               <label for="cat-coding">Заметки программиста</label>
+            </div>
+            <div class="form-group">
+               <label>
+                  <input type="radio" name="category" value="travel-notes" class="real-radio">
+                  <span class="custom-radio"></span>
+                  Заметки путешественника
+               </label>
+            </div>
+         </div>
+      </div>
+   </main>
+
+   <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Таймеры, счетчики</title>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./../css/style.css">
+</head>
+
+<body>
+   <section class="countdown">
+      <div class="countdown__wrapper">
+         <h1 class="countdown__title">до Нового года осталось:</h1>
+         <div class="countdown__year" id="year">2022</div>
+         <div class="countdown__counter" id="countdown">
+            <div class="countdown__time">
+               <h2 id="days">00</h2>
+               <small>дней</small>
+            </div>
+            <div class="countdown__time">
+               <h2 id="hours">00</h2>
+               <small>часов</small>
+            </div>
+            <div class="countdown__time">
+               <h2 id="minutes">00</h2>
+               <small>минут</small>
+            </div>
+            <div class="countdown__time">
+               <h2 id="seconds">00</h2>
+               <small>секунд</small>
+            </div>
+         </div>
+         <div class="countdown__preloader" id="preloader">
+            <div class="lds-ripple">
+               <div></div>
+               <div></div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <script src="../js/main.js"></script>
+</body>
+
+</html>
