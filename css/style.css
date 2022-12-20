@@ -838,7 +838,49 @@ label {
    align-items: center;
 }
 
-/*  вариант №1 */
+
+/*  вариант №3 */
+.btn-box2 {
+   height: 100%;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #377FBF;
+}
+
+.btn-box2 a {
+   font-size: 1.5rem;
+   padding: 0.5rem 1rem;
+   color: #f4f4f4;
+   text-transform: uppercase;
+}
+
+.btn2_hover {
+   font-size: 16px;
+   text-transform: uppercase;
+   color: #fff;
+   background-color: #377FBF;
+   padding: 1rem 1.5rem;
+   border-radius: 50px;
+
+   transition: box-shadow 600ms cubic-bezier(.33, .11, .02, .99),
+      transform 600ms cubic-bezier(.33, .11, .02, .99);
+}
+
+.btn2_hover:hover,
+.btn2_hover:focus {
+   box-shadow: 0 4px 4px rgba(0, 0, 0, .1),
+      0 1px 6px rgba(0, 0, 0, .05),
+      0 8px 8px rgba(0, 0, 0, .1),
+      0 16px 16px rgba(0, 0, 0, .1),
+      8px 32px 32px rgba(0, 0, 0, .15),
+      8px 64px 64px rgba(0, 0, 0, .15);
+
+   transform: scale(1.05) translateY(-0.5rem);
+}
+
+/*  вариант №2 */
 .btn-box1 {
    position: relative;
    height: 100%;
@@ -908,7 +950,7 @@ label {
    align-items: center;
 }
 
-a {
+.btn-box a {
    font-size: 1.5rem;
    padding: 0.5rem 1rem;
    color: #f4f4f4;
