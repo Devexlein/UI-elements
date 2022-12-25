@@ -12,322 +12,342 @@
 
 <body>
    <div class="wrapper">
-      <div class="nav__container">
-         <nav class="menu">
-            <ul class="menu__list">
-               <li class="menu__link">
-                  <a href="./pages/count.html" target="_blank">Обратный отсчет</a>
-               </li>
-               <li class="menu__link">
-                  <a href="./pages/sliders.html" target="_blank">Слайдеры</a>
-               </li>
-               <li class="menu__link">
-                  <a href="#blocks">Блоки</a>
-               </li>
-               <li class="menu__link">
-                  <a href="#tabs">Табы</a>
-               </li>
-               <li class="menu__link">
-                  <a href="#tabs">Аккардеон</a>
-               </li>
-               <li class="menu__link">
-                  <a href="#select">Выпадающий список</a>
-               </li>
-               <li class="menu__link">
-                  <a href="#toggle">Ползунки</a>
-               </li>
-               <li class="menu__link">
-                  <a href="#checkbox">Чекбоксы</a>
-               </li>
-               <li class="menu__link">
-                  <a href="#radio">Радиокнопки</a>
-               </li>
-            </ul>
-         </nav>
-      </div>
+      <header class="header">
+         <div class="header__container">
+            <a href="#" class="header__logo"></a>
+            <div class="header__menu menu">
+               <div class="menu__icon">
+                  <span></span>
+               </div>
+               <nav class="menu__body">
+                  <ul class="menu__list">
+                     <li><a data-goto=".tabs" href="#" class="menu__link">Табы</a></li>
+                     <li><a data-goto=".buttons" href="#" class="menu__link">Кнопки</a></li>
+                     <li>
+                        <a href="#" class="menu__link">Элементы формы</a>
+                        <span class="menu__arrow"></span>
+                        <ul class="menu__sub-list">
+                           <li><a data-goto=".select" href="#" class="menu__sub-link">Выпадающий список</a></li>
+                           <li><a data-goto=".toggle" href="#" class="menu__sub-link">Ползунки</a></li>
+                           <li><a data-goto=".checkbox" href="#" class="menu__sub-link">Чекбоксы</a></li>
+                           <li><a data-goto=".radio" href="#radio" class="menu__sub-link">Радиокнопки</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="./pages/sliders.html" target="_blank" class="menu__link">Слайдеры</a>
+                        <span class="menu__arrow"></span>
+                        <ul class="menu__sub-list">
+                           <li><a href="#" class="menu__sub-link">Параллакс слайдер</a></li>
+                           <li><a href="#" class="menu__sub-link">Еще слайдер</a></li>
+                        </ul>
+                     </li>
+                     <li><a class="menu__link" href="./pages/count.html" target="_blank">Обратный отсчет</a></li>
+                  </ul>
+               </nav>
+            </div>
+         </div>
+      </header>
+
       <main>
          <h1>Кастомные элементы</h1>
 
-         <div class="tab__container">
-            <h2 id="tabs">Табы</h2>
-            <div class="form-row">
-               <!-- вариант №2 -->
-               <div class="form-column">
-                  <h3>CSS и JS</h3>
-                  <div class="content-2">
-                     <div class="tabs">
-                        <ul class="tabs__list">
-                           <li class="tabs__link"><button class="tabs__btn tabs__btn_active"
-                                 data-tabs-path="main">Главная</button></li>
-                           <li class="tabs__link"><button class="tabs__btn" data-tabs-path="archive">Архив</button></li>
-                           <li class="tabs__link"><button class="tabs__btn" data-tabs-path="settings">Настройки</button>
-                           </li>
-                        </ul>
-                        <div class="tabs__box tabs__box_active" data-tabs-target="main">
-                           <div class="tabs__box-content">
-                              <h4 class="tabs__box-title">Добро пожаловать!</h4>
-                              <p class="tabs__box-description">Здесь находятся все ваши активные заказы.</p>
-                              <ul class="tabs__box-list">
-                                 <li class="tabs__box-item">
-                                    <a href="#" class="tabs__box-link"
-                                       style="background-image: url('./img/01.png')"><span
-                                          class="tabs__box-text">Занятия
-                                          йогой</span></a>
-                                 </li>
-                                 <li class="tabs__box-item">
-                                    <a href="#" class="tabs__box-link"
-                                       style="background-image: url('./img/02.png')"><span
-                                          class="tabs__box-text">Кардио</span></a>
-                                 </li>
-                                 <li class="tabs__box-item">
-                                    <a href="#" class="tabs__box-link"
-                                       style="background-image: url('./img/03.png')"><span
-                                          class="tabs__box-text">Силовые
-                                          тренировки</span></a>
-                                 </li>
-                              </ul>
+         <section id="tabs" class="tabs">
+            <div class="tabs__container">
+               <h2>Табы</h2>
+               <div class="form-row">
+                  <!-- вариант №2 -->
+                  <div class="form-column">
+                     <h3>CSS и JS</h3>
+                     <div class="content-2">
+                        <div class="tabs__row">
+                           <ul class="tabs__list">
+                              <li class="tabs__link"><button class="tabs__btn tabs__btn_active"
+                                    data-tabs-path="main">Главная</button></li>
+                              <li class="tabs__link"><button class="tabs__btn" data-tabs-path="archive">Архив</button>
+                              </li>
+                              <li class="tabs__link"><button class="tabs__btn"
+                                    data-tabs-path="settings">Настройки</button>
+                              </li>
+                           </ul>
+                           <div class="tabs__box tabs__box_active" data-tabs-target="main">
+                              <div class="tabs__box-content">
+                                 <h4 class="tabs__box-title">Добро пожаловать!</h4>
+                                 <p class="tabs__box-description">Здесь находятся все ваши активные заказы.</p>
+                                 <ul class="tabs__box-list">
+                                    <li class="tabs__box-item">
+                                       <a href="#" class="tabs__box-link"
+                                          style="background-image: url('./img/01.png')"><span
+                                             class="tabs__box-text">Занятия
+                                             йогой</span></a>
+                                    </li>
+                                    <li class="tabs__box-item">
+                                       <a href="#" class="tabs__box-link"
+                                          style="background-image: url('./img/02.png')"><span
+                                             class="tabs__box-text">Кардио</span></a>
+                                    </li>
+                                    <li class="tabs__box-item">
+                                       <a href="#" class="tabs__box-link"
+                                          style="background-image: url('./img/03.png')"><span
+                                             class="tabs__box-text">Силовые
+                                             тренировки</span></a>
+                                    </li>
+                                 </ul>
+                              </div>
                            </div>
-                        </div>
-                        <div class="tabs__box" data-tabs-target="archive">
-                           <div class="tabs__box-content"><span>Архив.</span> Lorem ipsum dolor sit amet
-                              consectetur
-                              adipisicing elit.
+                           <div class="tabs__box" data-tabs-target="archive">
+                              <div class="tabs__box-content"><span>Архив.</span> Lorem ipsum dolor sit amet
+                                 consectetur
+                                 adipisicing elit.
+                              </div>
                            </div>
-                        </div>
-                        <div class="tabs__box" data-tabs-target="settings">
-                           <div class="tabs__box-content"><span>Настройки.</span> Lorem ipsum dolor sit amet
+                           <div class="tabs__box" data-tabs-target="settings">
+                              <div class="tabs__box-content"><span>Настройки.</span> Lorem ipsum dolor sit amet
+                              </div>
                            </div>
-                        </div>
-                        <button class="tabs__arrow tabs__arrow_prev" aria-lebel="Назад">
-                           <svg width="21" height="12" viewBox="0 0 21 12" fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                 d="M0.469669 6.53033C0.176777 6.23744 0.176777 5.76256 0.469669 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.469669 6.53033ZM21 6.75H1V5.25H21V6.75Z" />
-                           </svg>
-                        </button>
-                        <button class="tabs__arrow tabs__arrow_next" aria-lebel="Вперед">
-                           <svg width="21" height="12" viewBox="0 0 21 12" fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                 d="M20.5303 6.53033C20.8232 6.23744 20.8232 5.76256 20.5303 5.46967L15.7574 0.696699C15.4645 0.403806 14.9896 0.403806 14.6967 0.696699C14.4038 0.989593 14.4038 1.46447 14.6967 1.75736L18.9393 6L14.6967 10.2426C14.4038 10.5355 14.4038 11.0104 14.6967 11.3033C14.9896 11.5962 15.4645 11.5962 15.7574 11.3033L20.5303 6.53033ZM0 6.75H20V5.25H0V6.75Z" />
-                           </svg>
-                        </button>
-                     </div>
-                  </div>
-                  <a href="https://www.youtube.com/watch?v=Conc66sfrho" class="link">Источник</a>
-               </div>
-            </div>
-
-            <div class="form-row">
-               <!-- вариант №1 -->
-               <div class="form-column">
-                  <h3>Только CSS</h3>
-                  <div class="content-1">
-                     <div class="tabs">
-                        <nav class="tabs__items">
-                           <a href="#tab_01" class="tabs__item"><span>Первая вкладка</span></a>
-                           <a href="#tab_02" class="tabs__item"><span>Вторая вкладка</span></a>
-                           <a href="#tab_03" class="tabs__item"><span>Третья вкладка</span></a>
-                        </nav>
-                        <div class="tabs__body">
-                           <div class="tabs__block" id="tab_01"><span>Первая вкладка.</span> Lorem ipsum dolor sit amet
-                              consectetur
-                              adipisicing elit.
-                              Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem eveniet blanditiis aliquam
-                              pariatur
-                              quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
-                              reprehenderit.
-                           </div>
-                           <div class="tabs__block" id="tab_02"><span>Вторая вкладка.</span> Lorem ipsum dolor sit amet
-                              consectetur
-                              adipisicing elit.
-                              Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem eveniet blanditiis aliquam
-                              pariatur
-                              quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita , saepe autem
-                              eveniet blanditiis aliquam pariatur
-                              quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
-                              reprehenderit.
-                           </div>
-                           <div class="tabs__block" id="tab_03"><span>Третья вкладка.</span> Lorem ipsum dolor sit amet
-                              consectetur
-                              adipisicing elit.
-                              Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem eveniet blanditiis aliquam
-                              pariatur
-                              quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
-                              reprehenderit.
-                           </div>
+                           <button class="tabs__arrow tabs__arrow_prev" aria-lebel="Назад">
+                              <svg width="21" height="12" viewBox="0 0 21 12" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M0.469669 6.53033C0.176777 6.23744 0.176777 5.76256 0.469669 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.469669 6.53033ZM21 6.75H1V5.25H21V6.75Z" />
+                              </svg>
+                           </button>
+                           <button class="tabs__arrow tabs__arrow_next" aria-lebel="Вперед">
+                              <svg width="21" height="12" viewBox="0 0 21 12" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M20.5303 6.53033C20.8232 6.23744 20.8232 5.76256 20.5303 5.46967L15.7574 0.696699C15.4645 0.403806 14.9896 0.403806 14.6967 0.696699C14.4038 0.989593 14.4038 1.46447 14.6967 1.75736L18.9393 6L14.6967 10.2426C14.4038 10.5355 14.4038 11.0104 14.6967 11.3033C14.9896 11.5962 15.4645 11.5962 15.7574 11.3033L20.5303 6.53033ZM0 6.75H20V5.25H0V6.75Z" />
+                              </svg>
+                           </button>
                         </div>
                      </div>
+                     <a href="https://www.youtube.com/watch?v=Conc66sfrho" class="link">Источник</a>
                   </div>
-                  <a href="https://www.youtube.com/watch?v=5Bh6-xl9FMM" class="link">Источник: проблема резкого
-                     поднятия к верхнему краю, при загрузке страницы требуется открытие активной вкладки (можно по
-                     хешу)</a>
+               </div>
+
+               <div class="form-row">
+                  <!-- вариант №1 -->
+                  <div class="form-column">
+                     <h3>Только CSS</h3>
+                     <div class="content-1">
+                        <div class="tabs__row">
+                           <nav class="tabs__items">
+                              <a href="#tab_01" class="tabs__item"><span>Первая вкладка</span></a>
+                              <a href="#tab_02" class="tabs__item"><span>Вторая вкладка</span></a>
+                              <a href="#tab_03" class="tabs__item"><span>Третья вкладка</span></a>
+                           </nav>
+                           <div class="tabs__body">
+                              <div class="tabs__block" id="tab_01"><span>Первая вкладка.</span> Lorem ipsum dolor sit
+                                 amet
+                                 consectetur
+                                 adipisicing elit.
+                                 Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem eveniet blanditiis aliquam
+                                 pariatur
+                                 quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
+                                 reprehenderit.
+                              </div>
+                              <div class="tabs__block" id="tab_02"><span>Вторая вкладка.</span> Lorem ipsum dolor sit
+                                 amet
+                                 consectetur
+                                 adipisicing elit.
+                                 Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem eveniet blanditiis aliquam
+                                 pariatur
+                                 quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita , saepe
+                                 autem
+                                 eveniet blanditiis aliquam pariatur
+                                 quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
+                                 reprehenderit.
+                              </div>
+                              <div class="tabs__block" id="tab_03"><span>Третья вкладка.</span> Lorem ipsum dolor sit
+                                 amet
+                                 consectetur
+                                 adipisicing elit.
+                                 Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem eveniet blanditiis aliquam
+                                 pariatur
+                                 quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
+                                 reprehenderit.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <a href="https://www.youtube.com/watch?v=5Bh6-xl9FMM" class="link">Источник: проблема резкого
+                        поднятия к верхнему краю, при загрузке страницы требуется открытие активной вкладки (можно по
+                        хешу)</a>
+                  </div>
                </div>
             </div>
-         </div>
+         </section>
 
+         <section id="buttons" class="buttons">
+            <div class="buttons__container">
+               <h2>Кнопки</h2>
+               <div class="form-row">
+                  <!-- вариант №1 -->
+                  <div class="form-column">
+                     <div class="btn-box">
+                        <a href="#" class="btn">Hover to Shine</a>
+                     </div>
+                  </div>
 
-         <div class="buttons__container">
-            <h2 id="buttons">Кнопки</h2>
-            <div class="form-row">
-               <!-- вариант №1 -->
-               <div class="form-column">
-                  <div class="btn-box">
-                     <a href="#" class="btn">Hover to Shine</a>
+                  <!-- вариант №2 -->
+                  <div class="form-column">
+                     <div class="btn-box1">
+                        <a href="#" class="btn1"><span>PAO</span></a>
+                     </div>
+                  </div>
+
+                  <!-- вариант №3 -->
+                  <div class="form-column">
+                     <div class="btn-box2">
+                        <a href="#" class="btn2 btn2_hover">Hover me</a>
+                     </div>
                   </div>
                </div>
 
-               <!-- вариант №2 -->
-               <div class="form-column">
-                  <div class="btn-box1">
-                     <a href="#" class="btn1"><span>PAO</span></a>
-                  </div>
-               </div>
+            </div>
+         </section>
 
-               <!-- вариант №3 -->
-               <div class="form-column">
-                  <div class="btn-box2">
-                     <a href="#" class="btn2 btn2_hover">Hover me</a>
+         <section id="inputs" class="inputs">
+            <div class="inputs__container">
+               <h2>Поля формы. Input</h2>
+               <div class="form-row">
+                  <!-- вариант №1 -->
+                  <div class="form-column">
+                     <div class="form-input">
+                        <input class="content-name" type="text" name="name1" required autocomplete="off" />
+                        <label for="name1">
+                           <span class="label-name">
+                              Name
+                           </span>
+                        </label>
+                     </div>
+                  </div>
+
+                  <!-- вариант №2 -->
+                  <div class="form-column">
+                     <div class="input-box">
+                        <div class="input-group">
+                           <input type="text" id="name2" placeholder=" " />
+                           <label for="name2">username</label>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </section>
+
+         <section id="selects" class="selects">
+            <div class="selects__container">
+               <h2>Select. Выпадающий список</h2>
+               <div class="form-row">
+                  <!-- вариант №1 -->
+                  <div class="form-column">
+                     <h3>Только CSS</h3>
+                     <div class="form-group-title">Выберите категорию:</div>
+                     <div class="form-group">
+                        <div class="select-wrapper">
+                           <select name="select-category" class="select">
+                              <option value="1">Заметки путешественника</option>
+                              <option value="2">Заметки программиста</option>
+                              <option value="3">Конспекты по учебе</option>
+                              <option value="4">Фотоальбом</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- вариант №2 -->
+                  <div class="form-column">
+                     <h3>CSS и JS</h3>
+                     <div class="form-group-title">Выберите категорию:</div>
+                     <div class="form-group">
+                        <div class="dropdown">
+                           <button class="dropdown__button">Заметки путешественника</button>
+                           <ul class="dropdown__list">
+                              <li class="dropdown__list-item" data-value="travel">Заметки путешественника</li>
+                              <li class="dropdown__list-item" data-value="codding">Заметки программиста</li>
+                              <li class="dropdown__list-item" data-value="lessons">Конспекты по учебе</li>
+                              <li class="dropdown__list-item" data-value="photo">Фотоальбом</li>
+                           </ul>
+                           <input type="text" name="select-category" value="" class="dropdown__input-hidden">
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
+         </section>
 
-         </div>
-
-         <div class="inputs__container">
-            <h2 id="inputs">Поля формы. Input</h2>
-            <div class="form-row">
-               <!-- вариант №1 -->
-               <div class="form-column">
-                  <div class="form-input">
-                     <input class="content-name" type="text" name="name1" required autocomplete="off" />
-                     <label for="name1">
-                        <span class="label-name">
-                           Name
-                        </span>
+         <section id="toggles" class="toggles">
+            <div class="toggles__container">
+               <h2>Ползунки</h2>
+               <div class="form-row">
+                  <div class="form-column">
+                     <label class="toggle_1">
+                        <input type="checkbox" class="toggle__real">
+                        <div class="toggle__div"></div>
                      </label>
                   </div>
-               </div>
 
-               <!-- вариант №2 -->
-               <div class="form-column">
-                  <div class="input-box">
-                     <div class="input-group">
-                        <input type="text" id="name2" placeholder=" " />
-                        <label for="name2">username</label>
-                     </div>
-                  </div>
-               </div>
-
-            </div>
-         </div>
-
-
-
-         <div class="select__container">
-            <h2 id="select">Select. Выпадающий список</h2>
-            <div class="form-row">
-               <!-- вариант №1 -->
-               <div class="form-column">
-                  <h3>Только CSS</h3>
-                  <div class="form-group-title">Выберите категорию:</div>
-                  <div class="form-group">
-                     <div class="select-wrapper">
-                        <select name="select-category" class="select">
-                           <option value="1">Заметки путешественника</option>
-                           <option value="2">Заметки программиста</option>
-                           <option value="3">Конспекты по учебе</option>
-                           <option value="4">Фотоальбом</option>
-                        </select>
-                     </div>
-                  </div>
-               </div>
-
-               <!-- вариант №2 -->
-               <div class="form-column">
-                  <h3>CSS и JS</h3>
-                  <div class="form-group-title">Выберите категорию:</div>
-                  <div class="form-group">
-                     <div class="dropdown">
-                        <button class="dropdown__button">Заметки путешественника</button>
-                        <ul class="dropdown__list">
-                           <li class="dropdown__list-item" data-value="travel">Заметки путешественника</li>
-                           <li class="dropdown__list-item" data-value="codding">Заметки программиста</li>
-                           <li class="dropdown__list-item" data-value="lessons">Конспекты по учебе</li>
-                           <li class="dropdown__list-item" data-value="photo">Фотоальбом</li>
-                        </ul>
-                        <input type="text" name="select-category" value="" class="dropdown__input-hidden">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <div class="toggle__container">
-            <h2 id="toggle">Ползунки</h2>
-            <div class="form-row">
-               <div class="form-column">
-                  <label class="toggle_1">
-                     <input type="checkbox" class="toggle__real">
-                     <div class="toggle__div"></div>
-                  </label>
-               </div>
-
-               <div class="form-column">
-                  <!-- <div class="widget__body"> -->
-                  <label class="toggle_2">
-                     <input type="checkbox" class="toggle__real" name="comission">
-                     <span class="toggle__fake"></span>
-                     <span class="toggle__title">Услуги 0%</span>
-                  </label>
-                  <!-- </div> -->
-               </div>
-            </div>
-         </div>
-
-         <div class="checkbox__container">
-            <h2 id="checkbox">Чекбоксы</h2>
-            <div class="form-row">
-               <div class="form-column">
-                  <div class="form-group-title">Выберите категорию:</div>
-                  <div class="form-group">
-                     <label>
-                        <input type="checkbox" name="coding-notes" class="real-checkbox">
-                        <span class="custom-checkbox"></span>
-                        Заметки программиста
+                  <div class="form-column">
+                     <!-- <div class="widget__body"> -->
+                     <label class="toggle_2">
+                        <input type="checkbox" class="toggle__real" name="comission">
+                        <span class="toggle__fake"></span>
+                        <span class="toggle__title">Услуги 0%</span>
                      </label>
-                  </div>
-                  <div class="form-group">
-                     <label>
-                        <input type="checkbox" name="travel-notes" class="real-checkbox">
-                        <span class="custom-checkbox"></span>
-                        Заметки путешественника
-                     </label>
+                     <!-- </div> -->
                   </div>
                </div>
             </div>
-         </div>
+         </section>
 
-         <div class="radio__container">
-            <h2 id="radio">Радиокнопки</h2>
-            <div class="form-row">
-               <div class="form-column">
-                  <div class="form-group-title">Выберите категорию:</div>
-                  <div class="form-group">
-                     <input type="radio" id="cat-coding" name="category" value="coding-notes" class="real-radio">
-                     <span class="custom-radio"></span>
-                     <label for="cat-coding">Заметки программиста</label>
+         <section id="checkboxes" class="checkboxes">
+            <div class="checkboxes__container">
+               <h2>Чекбоксы</h2>
+               <div class="form-row">
+                  <div class="form-column">
+                     <div class="form-group-title">Выберите категорию:</div>
+                     <div class="form-group">
+                        <label>
+                           <input type="checkbox" name="coding-notes" class="real-checkbox">
+                           <span class="custom-checkbox"></span>
+                           Заметки программиста
+                        </label>
+                     </div>
+                     <div class="form-group">
+                        <label>
+                           <input type="checkbox" name="travel-notes" class="real-checkbox">
+                           <span class="custom-checkbox"></span>
+                           Заметки путешественника
+                        </label>
+                     </div>
                   </div>
-                  <div class="form-group">
-                     <label>
-                        <input type="radio" name="category" value="travel-notes" class="real-radio">
+               </div>
+            </div>
+         </section>
+
+         <section id="radio-boxes" class="radio-boxes">
+            <div class="radio-boxes__container">
+               <h2>Радиокнопки</h2>
+               <div class="form-row">
+                  <div class="form-column">
+                     <div class="form-group-title">Выберите категорию:</div>
+                     <div class="form-group">
+                        <input type="radio" id="cat-coding" name="category" value="coding-notes" class="real-radio">
                         <span class="custom-radio"></span>
-                        Заметки путешественника
-                     </label>
+                        <label for="cat-coding">Заметки программиста</label>
+                     </div>
+                     <div class="form-group">
+                        <label>
+                           <input type="radio" name="category" value="travel-notes" class="real-radio">
+                           <span class="custom-radio"></span>
+                           Заметки путешественника
+                        </label>
+                     </div>
                   </div>
                </div>
             </div>
-         </div>
+         </section>
       </main>
    </div>
 
