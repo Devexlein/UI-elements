@@ -8,7 +8,13 @@
    box-sizing: border-box;
 }
 
-li {
+/* Управление высотой строки, но размер шрифта браузера должен быть установлен по умолчанию */
+/* * {
+   line-height: calc(1em + 0.5rem);
+} */
+
+ul[role='list'],
+ol[role='list'] {
    list-style: none;
 }
 
@@ -18,12 +24,15 @@ h3,
 h4,
 h5,
 h6 {
-   font-size: inherit;
-   font-weight: inherit;
+   font: inherit;
+   /* Избегаем переполнения текста, разрешаем жесткий перенос */
+   overflow-wrap: break-word;
 }
 
-img {
-   vertical-align: top;
+p {
+   overflow-wrap: break-word;
+   /* используем дефисы */
+   hyphens: auto;
 }
 
 a,
@@ -48,12 +57,26 @@ aside {
 
 input,
 button,
-textarea {
-   font-family: inherit;
+textarea,
+select {
+   font: inherit;
 }
 
 input::-ms-clear {
    display: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+   display: block;
+   max-width: 100%;
+}
+
+img {
+   vertical-align: top;
 }
 
 button {
@@ -68,14 +91,17 @@ button::-moz-focus-inner {
 html,
 body {
    height: 100%;
-   line-height: 1;
 }
 
 body {
+   /* критерии WCAG для «основного» текста (см. стр.11) */
+   line-height: 1.5;
+   /* Улучшить рендеринг текста (отключаем субпиксельное сглаживание в Chrome и Safari) */
+   -webkit-font-smoothing: antialiased;
+
    padding: 0px 15px;
    font-family: 'Roboto', sans-serif;
    font-size: 16px;
-   line-height: 1.5;
    background-color: rgb(247, 239, 233);
    color: #2e2f34;
 }
