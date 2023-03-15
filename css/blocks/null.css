@@ -1,0 +1,89 @@
+/* Обнуление и общие стили */
+*,
+*::after,
+*::before {
+   padding: 0;
+   margin: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+
+/* Управление высотой строки, но размер шрифта браузера должен быть установлен по умолчанию */
+/* * {
+   line-height: calc(1em + 0.5rem);
+} */
+
+ul[role='list'],
+ol[role='list'] {
+   list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font: inherit;
+   /* Избегаем переполнения текста, разрешаем жесткий перенос */
+   overflow-wrap: break-word;
+}
+
+p {
+   overflow-wrap: break-word;
+   /* используем дефисы */
+   hyphens: auto;
+}
+
+a,
+a:visited,
+a:hover {
+   text-decoration: none;
+}
+
+:focus,
+:active,
+a:focus,
+a:active {
+   outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+   display: block;
+}
+
+input,
+button,
+textarea,
+select {
+   font: inherit;
+}
+
+input::-ms-clear {
+   display: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+   display: block;
+   max-width: 100%;
+}
+
+img {
+   vertical-align: top;
+}
+
+button {
+   cursor: pointer;
+}
+
+button::-moz-focus-inner {
+   padding: 0;
+   border: 0;
+}

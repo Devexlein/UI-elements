@@ -1,0 +1,718 @@
+/* sliders */
+#sliders {
+   background-color: #343334;
+}
+
+.sliders__container {
+   position: relative;
+}
+
+.sliders__row {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: 400px;
+   -moz-gap: 40px;
+   gap: 50px;
+}
+
+.sliders__column_color {
+   position: relative;
+   padding: 100px 150px;
+   margin: 0px -20px;
+   background: #556270;
+   -webkit-animation: bgColor 15s infinite;
+   animation: bgColor 15s infinite;
+}
+
+@-webkit-keyframes bgColor {
+
+   0%,
+   3% {
+      background: #774F38
+   }
+
+   14%,
+   19% {
+      background: #C5E0DC
+   }
+
+   31%,
+   36% {
+      background: #036564
+   }
+
+   45%,
+   55% {
+      background: #B38184
+   }
+
+   64%,
+   69% {
+      background: #424254
+   }
+
+   81%,
+   86% {
+      background: #4DBCE9
+   }
+
+   97%,
+   to {
+      background: #774F38
+   }
+}
+
+@keyframes bgColor {
+
+   0%,
+   3% {
+      background: #774F38
+   }
+
+   14%,
+   19% {
+      background: #C5E0DC
+   }
+
+   31%,
+   36% {
+      background: #036564
+   }
+
+   45%,
+   55% {
+      background: #B38184
+   }
+
+   64%,
+   69% {
+      background: #424254
+   }
+
+   81%,
+   86% {
+      background: #4DBCE9
+   }
+
+   97%,
+   to {
+      background: #774F38
+   }
+}
+
+.title-page {
+   font-size: 30px;
+   font-weight: 700;
+   margin-bottom: 30px;
+   padding-top: 30px;
+   text-align: left;
+   color: #fff;
+}
+
+.title-page_main {
+   font-size: 36px;
+   color: #00ff9d;
+}
+
+.subtitle {
+   color: #7e9bbd;
+   margin-bottom: 50px;
+}
+
+.subtitle_cube-box {
+   position: absolute;
+   top: -50px;
+   margin-bottom: 100px;
+}
+
+/* для универсальности через Sass добавляем переменные и формулы */
+/* @use 'sass:math'; */
+/* number of images*/
+/* $n: 9; */
+
+.gallery {
+   /* control the size */
+   --s: 280px;
+   /* animation duration */
+   --d: 10s;
+   --r: calc((-20 + random(40))*1deg);
+
+   display: grid;
+   width: var(--s);
+}
+
+.gallery_3d,
+.gallery_3dmax {
+   --s: 250px;
+   transform-style: preserve-3d;
+   --_p: perspective(calc(2.5*var(--s)));
+}
+
+.gallery_3d {
+   -webkit-animation: cubeSlider 15s infinite cubic-bezier(.5, -0.5, .5, 1.5);
+   animation: cubeSlider 15s infinite cubic-bezier(.5, -0.5, .5, 1.5);
+}
+
+.gallery_3dmax {
+   -webkit-animation: cubeRandomSlider 15s infinite cubic-bezier(.5, -0.5, .5, 1.5);
+   animation: cubeRandomSlider 15s infinite cubic-bezier(.5, -0.5, .5, 1.5);
+}
+
+.gallery_circle {
+   aspect-ratio: 1;
+   padding: calc(var(--s) / 20);
+   position: relative;
+   border-radius: 50%;
+   -webkit-clip-path: circle(49.5%);
+   clip-path: circle(49.5%);
+   /* to avoid a few glitch caused by overflow: hidden */
+}
+
+.gallery_circle::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   padding: inherit;
+   border-radius: inherit;
+   background: repeating-conic-gradient(#eb8698 0 30deg, #5d71dd 0 60deg);
+   -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+   mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+   -webkit-mask-composite: xor;
+   mask-composite: exclude;
+}
+
+.gallery>img {
+   grid-area: 1 / 1;
+   width: 100%;
+   -o-object-fit: cover;
+   object-fit: cover;
+}
+
+.gallery_3d>img,
+.gallery_3dmax>img {
+   width: var(--s);
+   aspect-ratio: 1;
+   transform: var(--_t, ) translateZ(calc(var(--s)/2));
+}
+
+.gallery_circle>img {
+   border-radius: inherit;
+   transform-origin: 50% 120.7%;
+   /* меняем: transform-origin: 50% (50%/math.sin(180deg/$n) + 50%); */
+}
+
+.gallery_circle::after,
+.gallery_circle>img {
+   -webkit-animation: circleSlider 8s infinite cubic-bezier(.5, -0.2, .5, 1.2);
+   animation: circleSlider 8s infinite cubic-bezier(.5, -0.2, .5, 1.2);
+   /* @for $i from 2 to ($n + 1) {
+         .gallery>img:nth-child(#{$i}) {
+            animation-delay: calc(#{(1 - $i)/$n}*var(--d));
+         }    
+   данный код заменяет позиции с задержкой для дочерних элементов */
+}
+
+.gallery_circle>img:nth-child(2) {
+   -webkit-animation-delay: -2s;
+   animation-delay: -2s;
+}
+
+.gallery_circle>img:nth-child(3) {
+   -webkit-animation-delay: -4s;
+   animation-delay: -4s;
+}
+
+.gallery_circle>img:nth-child(4) {
+   -webkit-animation-delay: -6s;
+   animation-delay: -6s;
+}
+
+/*  строки 1425-1438 удалить */
+
+.gallery_polaroid>img {
+   aspect-ratio: 1;
+   border: 10px solid #f2f2f2;
+   box-shadow: 0 0 4px #0007;
+   z-index: 2;
+   -webkit-animation: polaroidSlider var(--d) infinite, z-order var(--d) infinite steps(1);
+   animation: polaroidSlider var(--d) infinite, z-order var(--d) infinite steps(1);
+}
+
+.gallery_polaroid>img:last-child {
+   -webkit-animation-name: polaroidSlider, z-order-last;
+   animation-name: polaroidSlider, z-order-last;
+}
+
+.gallery_polaroid>img:nth-child(2) {
+   -webkit-animation-delay: -2s;
+   animation-delay: -2s;
+}
+
+.gallery_polaroid>img:nth-child(3) {
+   -webkit-animation-delay: -4s;
+   animation-delay: -4s;
+}
+
+.gallery_3d img:nth-child(2),
+.gallery_3dmax img:nth-child(2) {
+   --_t: rotateX(-90deg)
+}
+
+.gallery_3d img:nth-child(3) {
+   --_t: rotateY(90deg) rotate(-90deg)
+}
+
+.gallery_3dmax img:nth-child(3) {
+   --_t: rotateY(90deg)
+}
+
+.gallery_3d img:nth-child(4),
+.gallery_3dmax img:nth-child(4) {
+   --_t: rotateX(180deg) rotate(90deg)
+}
+
+.gallery_3d img:nth-child(5) {
+   --_t: rotateX(90deg) rotate(90deg)
+}
+
+.gallery_3dmax img:nth-child(5) {
+   --_t: rotateX(90deg)
+}
+
+.gallery_3d img:nth-child(6),
+.gallery_3dmax img:nth-child(6) {
+   --_t: rotateY(-90deg)
+}
+
+@-webkit-keyframes circleSlider {
+
+   0%,
+   3% {
+      transform: rotate(0);
+   }
+
+   22%,
+   27% {
+      transform: rotate(-90deg);
+   }
+
+   47%,
+   52% {
+      transform: rotate(-180deg);
+   }
+
+   72%,
+   77% {
+      transform: rotate(-270deg);
+   }
+
+   /* вместо 3-х внутренних позиций выше: 
+   for $i from 1 to $n {   
+      #{($i/$n)*100 - 2}%,
+      #{($i/$n)*100 + 3}% {
+         transform: rotate(#{($i/$n)*-360}deg)
+      }
+   }*/
+
+   98%,
+   100% {
+      transform: rotate(-360deg);
+   }
+}
+
+@keyframes circleSlider {
+
+   0%,
+   3% {
+      transform: rotate(0);
+   }
+
+   22%,
+   27% {
+      transform: rotate(-90deg);
+   }
+
+   47%,
+   52% {
+      transform: rotate(-180deg);
+   }
+
+   72%,
+   77% {
+      transform: rotate(-270deg);
+   }
+
+   /* вместо 3-х внутренних позиций выше: 
+   for $i from 1 to $n {   
+      #{($i/$n)*100 - 2}%,
+      #{($i/$n)*100 + 3}% {
+         transform: rotate(#{($i/$n)*-360}deg)
+      }
+   }*/
+
+   98%,
+   100% {
+      transform: rotate(-360deg);
+   }
+}
+
+@-webkit-keyframes polaroidSlider {
+
+   16.67% {
+      transform: translateX(120%);
+   }
+
+   33.33% {
+      transform: translateX(0%);
+   }
+}
+
+@keyframes polaroidSlider {
+
+   16.67% {
+      transform: translateX(120%);
+   }
+
+   33.33% {
+      transform: translateX(0%);
+   }
+}
+
+@-webkit-keyframes z-order {
+
+   16.67%,
+   33.333% {
+      z-index: 1;
+   }
+
+   66.33% {
+      z-index: 2;
+   }
+}
+
+@keyframes z-order {
+
+   16.67%,
+   33.333% {
+      z-index: 1;
+   }
+
+   66.33% {
+      z-index: 2;
+   }
+}
+
+@-webkit-keyframes z-order-last {
+
+   16.67%,
+   33.33% {
+      z-index: 1;
+   }
+
+   83.33% {
+      z-index: 2;
+   }
+}
+
+@keyframes z-order-last {
+
+   16.67%,
+   33.33% {
+      z-index: 1;
+   }
+
+   83.33% {
+      z-index: 2;
+   }
+}
+
+/*  для универсальности через Sass меняем анимацию, добавляя поворот, переменные и формулы */
+/* @for $i from 1 to ($n + 1) {
+   .gallery>img:nth-child(#{$i}) {
+      animation-delay: calc(#{(1 - $i)/$n}*var(--d));
+      --r: #{(-20 + random(40))*1deg};
+   }
+}
+
+@keyframes polaroidSlider {
+   #{50/$n}% {
+      transform: translateX(120%) rotate(var(--r))
+   }
+
+   0%,
+   100%,
+   #{100/$n}% {
+      transform: translateX(0%) rotate(var(--r))
+   }
+}
+
+@keyframes z-order {
+
+   #{50/$n}%,
+   #{100/$n}% {
+      z-index: 1
+   }
+
+   #{100 - 100/$n}% {
+      z-index: 2
+   }
+}
+
+@keyframes z-order-last {
+
+   #{50/$n}%,
+   #{100/$n}% {
+      z-index: 1
+   }
+
+   #{100 - 50/$n}% {
+      z-index: 2
+   }
+} */
+
+@-webkit-keyframes cubeSlider {
+
+   0%,
+   3% {
+      transform: var(--_p)
+   }
+
+   14%,
+   19% {
+      transform: var(--_p) rotateX(90deg)
+   }
+
+   31%,
+   36% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg)
+   }
+
+   47%,
+   52% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg) rotateY(-90deg)
+   }
+
+   64%,
+   69% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg) rotateY(-90deg) rotateX(90deg)
+   }
+
+   81%,
+   86% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg) rotateY(-90deg) rotateX(90deg) rotateZ(90deg)
+   }
+
+   97%,
+   100% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg) rotateY(-90deg) rotateX(90deg) rotateZ(90deg) rotateY(-90deg)
+   }
+}
+
+@keyframes cubeSlider {
+
+   0%,
+   3% {
+      transform: var(--_p)
+   }
+
+   14%,
+   19% {
+      transform: var(--_p) rotateX(90deg)
+   }
+
+   31%,
+   36% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg)
+   }
+
+   47%,
+   52% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg) rotateY(-90deg)
+   }
+
+   64%,
+   69% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg) rotateY(-90deg) rotateX(90deg)
+   }
+
+   81%,
+   86% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg) rotateY(-90deg) rotateX(90deg) rotateZ(90deg)
+   }
+
+   97%,
+   100% {
+      transform: var(--_p) rotateX(90deg) rotateZ(90deg) rotateY(-90deg) rotateX(90deg) rotateZ(90deg) rotateY(-90deg)
+   }
+}
+
+@-webkit-keyframes cubeRandomSlider {
+
+   0%,
+   3% {
+      transform: var(--_p) rotate3d(0, 0, 0, 0deg)
+   }
+
+   14%,
+   19% {
+      transform: var(--_p) rotate3d(-1, 1, 0, 180deg)
+   }
+
+   31%,
+   36% {
+      transform: var(--_p) rotate3d(0, -1, 0, 90deg)
+   }
+
+   47%,
+   52% {
+      transform: var(--_p) rotate3d(1, 0, 0, 90deg)
+   }
+
+   64%,
+   69% {
+      transform: var(--_p) rotate3d(1, 0, 0, -90deg)
+   }
+
+   81%,
+   86% {
+      transform: var(--_p) rotate3d(0, 1, 0, 90deg)
+   }
+
+   97%,
+   100% {
+      transform: var(--_p) rotate3d(0, 0, 0, 0deg)
+   }
+}
+
+@keyframes cubeRandomSlider {
+
+   0%,
+   3% {
+      transform: var(--_p) rotate3d(0, 0, 0, 0deg)
+   }
+
+   14%,
+   19% {
+      transform: var(--_p) rotate3d(-1, 1, 0, 180deg)
+   }
+
+   31%,
+   36% {
+      transform: var(--_p) rotate3d(0, -1, 0, 90deg)
+   }
+
+   47%,
+   52% {
+      transform: var(--_p) rotate3d(1, 0, 0, 90deg)
+   }
+
+   64%,
+   69% {
+      transform: var(--_p) rotate3d(1, 0, 0, -90deg)
+   }
+
+   81%,
+   86% {
+      transform: var(--_p) rotate3d(0, 1, 0, 90deg)
+   }
+
+   97%,
+   100% {
+      transform: var(--_p) rotate3d(0, 0, 0, 0deg)
+   }
+}
+
+/* ========================================== */
+.parallax-slider {
+   min-width: 0;
+   padding: 30px 0px 70px 0px;
+   position: relative;
+}
+
+.parallax-slider__bg {
+   position: absolute;
+   top: 0;
+   background: url('../img/05.png') center / cover no-repeat;
+   width: 140%;
+   height: 600px;
+}
+
+.parallax-slider__slide {
+   padding: 50px;
+   max-width: 1200px;
+}
+
+.parallax-slider__title {
+   color: #fff;
+   font-size: 30px;
+   font-weight: 700;
+   margin-bottom: 10px;
+}
+
+.parallax-slider__text {
+   margin-bottom: 20px;
+}
+
+.parallax-slider__button {
+   display: inline-block;
+   padding: 10px 30px;
+   font-size: 14px;
+   color: #fff;
+   text-align: center;
+   background-color: #a0695b;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+   color: #eb8698;
+   position: absolute;
+   top: 70%;
+}
+
+.swiper-button-prev {
+   left: -15px;
+}
+
+.swiper-button-next {
+   right: -15px;
+}
+
+@-webkit-keyframes lds-ripple {
+   0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+   }
+
+   100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+   }
+}
+
+@keyframes lds-ripple {
+   0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+   }
+
+   100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+   }
+}

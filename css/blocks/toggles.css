@@ -1,0 +1,96 @@
+/* Ползунки */
+
+.toggle__real {
+   width: 1px;
+   height: 1px;
+   position: absolute;
+   opacity: 0;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
+/* вариант 1*/
+
+.toggle_1 {
+   --width: 60px;
+   --height: 30px;
+   --offset: 2px;
+   --first-color: #2e2f34;
+   --second-color: #00ff9d;
+   --duration: .3s cubic-bezier(.47, 1.64, .41, .8),
+      background-color .3s linear;
+   cursor: pointer;
+}
+
+.toggle_1:hover .toggle__div::before {
+   transform: scale(.9);
+}
+
+.toggle__real:checked~.toggle__div {
+   background-color: var(--second-color);
+}
+
+.toggle__real:checked~.toggle__div::before {
+   background-color: var(--first-color);
+   left: calc(var(--width) - var(--height) + var(--offset));
+}
+
+.toggle__div {
+   width: var(--width);
+   height: var(--height);
+   background-color: var(--first-color);
+   border-radius: var(--width);
+   position: relative;
+   transition: var(--duration);
+}
+
+.toggle__div::before {
+   content: '';
+   width: calc(var(--height) - 2 * var(--offset));
+   height: calc(var(--height) - 2 * var(--offset));
+   position: absolute;
+   top: var(--offset);
+   left: var(--offset);
+   background-color: var(--second-color);
+   border-radius: var(--width);
+   transition: var(--duration);
+}
+
+/* вариант 2*/
+.toggle__fake {
+   position: relative;
+   display: inline-block;
+   width: 37px;
+   height: 20px;
+   background-color: #c4c4c4;
+   border-radius: 10px;
+   vertical-align: bottom;
+   margin-right: 7px;
+}
+
+.toggle__fake::before {
+   content: '';
+   width: 16px;
+   height: 16px;
+   background-color: #3C3C3C;
+   border-radius: 50%;
+   position: absolute;
+   top: 2px;
+   left: 2px;
+   transition: all 0.3s ease-in;
+}
+
+.toggle__real:checked+.toggle__fake {
+   background-color: #4f77f9;
+}
+
+.toggle__real:checked+.toggle__fake::before {
+   transform: translateX(105%);
+}
+
+.toggle__title {
+   font-size: 16px;
+   line-height: 1.19;
+   color: #3C3C3C;
+}

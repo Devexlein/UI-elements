@@ -1,0 +1,96 @@
+.row {
+   margin: 2rem auto;
+   padding: 0.5rem;
+   max-width: 50rem;
+   border: 1px dashed rgb(0 0 0 / 0.4);
+   margin-inline: auto;
+   display: flex;
+   align-items: flex-start;
+}
+
+.item {
+   aspect-ratio: var(--ratio);
+   background: rgb(156, 170, 251);
+   font-weight: 700;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 2rem;
+   width: 100%;
+}
+
+.item:nth-child(2) {
+   background: rgb(250, 217, 159);
+}
+
+.item:nth-child(3) {
+   background: rgb(159, 250, 229);
+}
+
+/* Решение №1 
+   Определите соотношение сторон для строки
+   4/3 + 2/3 = 6/3 */
+
+.row_1 {
+   aspect-ratio: 6/3;
+   /* aspect-ratio: calc((4 / 3) + (2 / 3)); */
+}
+
+.item_1 {
+   height: 100%;
+}
+
+.disadvantage span {
+   font-weight: 700;
+}
+
+/* Решение №2    Flex-Grow
+   Вместо установления ширины/высоты элементов,
+   указываем им, насколько они могут увеличиваться.
+   Важно установить flex-basis равным нулю и одинаковое 
+   соответствующее значение для aspect-ratio (в виде дроби)
+   и flex-grow (десятичное значение).
+   Работает независимо от количества элементов в строке */
+
+.row_2 {
+   gap: 1rem;
+}
+
+.item_2 {
+   flex-basis: 0;
+   flex-grow: calc(var(--ratio));
+}
+
+/* .item_2:first-child {
+   flex-grow: 4;
+}
+
+.item_2:last-child {
+   flex-grow: 2;
+} */
+
+/* Решение №3    Flex-Grow + модификатор https: //heydonworks.com/article/the-flexbox-holy-albatross-reincarnated/
+   Расширенное с добавлением модификатора, который переключает 
+   значение flex-basis с нуля на очень высокое число на брейкпойнте,
+   получаем сложенный макет на маленьких экранах (без промежуточного
+   варианта: либо 33%, либо 100% ширины контейнера/родительского элемента) 
+   и ряд изображений на больших экранах */
+
+.row_3 {
+   --modifier: calc((30rem - 100%) * 999);
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+}
+
+.item_3 {
+   flex-basis: max(var(--modifier), 0px);
+   aspect-ratio: var(--ratio);
+   flex-grow: calc(var(--ratio));
+}
+
+.item_3 img {
+   display: block;
+   width: 100%;
+   height: auto;
+}

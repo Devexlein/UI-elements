@@ -220,7 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Радужная кнопка
+// Радужная кнопка 
+// *registerProperty (CSS Houdini) - анимация не работает в Firefox или Safari
 const rainbowColors = [
    // 'hsl(1deg, 96%, 55%)', // red
    // 'hsl(25deg, 100%, 50%)', // orange

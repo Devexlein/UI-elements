@@ -1,0 +1,139 @@
+/* Селект на SCC */
+.select {
+   /* Убираем браузерную стрелку */
+   /* Поддержка 88.06% + 10.02% = 98.07% unprefixed: 88.02%*/
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   appearance: none;
+   /* Убираем рамку и фон либо переопределяем их */
+   border: none;
+   background-color: transparent;
+   outline: none;
+   /* либо сразу переопределяем рамку и фон */
+   border: 1px solid #7e9bbd;
+   border-radius: 6px;
+   background-color: #fff;
+
+   cursor: pointer;
+   padding: 10px 35px 10px 15px;
+   width: 100%;
+}
+
+/* Убираем стрелку в IE 10 и 11 */
+.select::-ms-expand {
+   display: none;
+}
+
+.select:focus {
+   outline: none;
+   box-shadow: 0px 0px 0px 1px #38577a, 0px 0px 10px 0px #7e9bbd;
+}
+
+.select-wrapper {
+   position: relative;
+   width: 90%;
+}
+
+.select-wrapper::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   right: 15px;
+   transform: translateY(-50%);
+   display: block;
+
+   /* Рисуем треугольник */
+   width: 0;
+   height: 0;
+   border-style: solid;
+   border-width: 10.4px 6px 0 6px;
+   border-color: #7e9bbd transparent transparent transparent;
+
+   /* Снимаем клик со стрелки */
+   pointer-events: none;
+}
+
+/* Селект с dropdown на JS */
+.dropdown {
+   position: relative;
+}
+
+.dropdown__button {
+   position: relative;
+   display: block;
+   width: 100%;
+   text-align: left;
+   font-size: 16px;
+   font-weight: 500;
+   border: 1px solid #7e9bbd;
+   border-radius: 6px;
+   background-color: #fff;
+   cursor: pointer;
+   padding: 13px 35px 13px 20px;
+}
+
+.dropdown__button::after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   right: 15px;
+   transform: translateY(-50%);
+   width: 0;
+   height: 0;
+   border-style: solid;
+   border-width: 10.4px 6px 0 6px;
+   border-color: #7e9bbd transparent transparent transparent;
+   pointer-events: none;
+}
+
+.dropdown__button:focus,
+.dropdown__button--active {
+   outline: none;
+   box-shadow: 0px 0px 0px 1px #38577a, 0px 0px 10px 0px #7e9bbd;
+}
+
+.dropdown__input-hidden {
+   display: none;
+}
+
+.dropdown__list {
+   display: none;
+   position: absolute;
+   width: 100%;
+   top: 52px;
+   left: 0;
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
+   overflow: hidden;
+   z-index: 1;
+
+   border-radius: 6px;
+   background-color: #fff;
+   box-shadow: 0px 0px 10px 0px rgba(126, 155, 189, 0.5);
+}
+
+.dropdown__list--visible {
+   display: block;
+}
+
+.dropdown__list-item {
+   cursor: pointer;
+   margin: 0;
+   padding: 13px 20px;
+   border: 1px solid #7e9bbd;
+   border-bottom: 0;
+}
+
+.dropdown__list-item:first-child {
+   border-radius: 6px 6px 0 0;
+}
+
+.dropdown__list-item:last-child {
+   border-radius: 0 0 6px 6px;
+   border-bottom: 1px solid #7e9bbd;
+}
+
+.dropdown__list-item:hover {
+   background: rgba(176, 198, 225, 0.26);
+}

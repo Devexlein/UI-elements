@@ -1,0 +1,89 @@
+html,
+body {
+   height: 100%;
+}
+
+body {
+   /* критерии WCAG для «основного» текста (см. стр.11) */
+   line-height: 1.5;
+   /* Улучшить рендеринг текста (отключаем субпиксельное сглаживание в Chrome и Safari) */
+   -webkit-font-smoothing: antialiased;
+
+   padding: 0px 15px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   background-color: rgb(247, 239, 233);
+   color: #2e2f34;
+}
+
+body._lock {
+   overflow: hidden;
+}
+
+.wrapper {
+   min-height: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+}
+
+[class*="__container"] {
+   max-width: 1190px;
+   margin: 0 auto;
+   padding: 0px 15px;
+}
+
+main {
+   padding-top: 80px;
+}
+
+h1 {
+   font-size: 32px;
+   font-weight: 700;
+   text-align: center;
+   color: #a0695b;
+}
+
+h2 {
+   font-size: 24px;
+   font-weight: 700;
+   margin-top: 2em;
+   margin-bottom: 1em;
+}
+
+h3 {
+   font-size: 20px;
+   font-weight: 500;
+   color: #38577a;
+   font-size: 1em;
+}
+
+.disadvantage {
+   color: #c86565;
+}
+
+.form-row {
+   display: flex;
+   justify-content: space-between;
+   background: rgba(126, 155, 189, 0.2);
+   padding: 15px 5px;
+}
+
+.form-column {
+   flex: 0 1 50%;
+}
+
+.form-group-title {
+   font-style: 22px;
+   font-weight: 700;
+   margin-top: 1em;
+   margin-bottom: 1em;
+}
+
+.form-group+.form-group {
+   margin-top: 10px;
+}
+
+label {
+   cursor: pointer;
+}

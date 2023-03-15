@@ -1,0 +1,38 @@
+/* нумерованные списки */
+/* одноуровневые */
+.list__item {
+   /* увеличивает переменную «счетчик» - muffins */
+   counter-increment: muffins;
+}
+
+/* показывает текущее значение счетчика */
+.list__item::before {
+   content: counter(muffins) "_ ";
+   color: rgb(146, 148, 248);
+   font-weight: 700;
+   padding-right: 10px;
+}
+
+.list {
+   list-style: none;
+   counter-reset: muffins;
+}
+
+/* многоуровневые, используете counters вместо counter
+и добавляете «промежуточный» разделитель */
+.list-inner {
+   list-style: none;
+   counter-reset: cupcake;
+   padding-left: 32px;
+}
+
+.list-inner__item {
+   counter-increment: cupcake;
+}
+
+.list-inner__item::before {
+   content: counters(cupcake, '.') ' ';
+   color: hotpink;
+   font-weight: bold;
+   font-family: cursive;
+}
