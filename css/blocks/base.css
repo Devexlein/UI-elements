@@ -58,7 +58,7 @@ h3 {
    font-size: 1em;
 }
 
-.disadvantage {
+[class*="_disadvantage"] {
    color: #c86565;
 }
 

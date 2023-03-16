@@ -5,14 +5,13 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Galleries</title>
+   <title>Примеры компоновки галерей</title>
    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
    <h2>Макет: несколько рядов по 2 изображения рядом (должны занимать одинаковую высоту и заполнять всю строку) с
-      фиксированным соотношением (от 16:9 до 3:4, т.е. альбомные, квадратные, портретные),
-      сторон</h2>
+      фиксированным соотношением (от 16:9 до 3:4, т.е. альбомные, квадратные, портретные) сторон</h2>
    <div class="row row_3">
       <div style="--ratio: 1024 / 600;" class="item item_3">
          <img src="https://image-placeholder.com/images/actual-size/1024x600.png" width="1024" height="600" alt="">
@@ -43,7 +42,7 @@
       <div class="item item_1" style="--ratio: 2 / 3;">2:3</div>
    </div>
    <h3>Решение №1: Определяем соотношение сторон для строки</h3>
-   <ol class="list disadvantage"><span>Недостатки:</span>
+   <ol class="list list_disadvantage"><span>Недостатки:</span>
       <li class="list__item">Нужно установить соотношение сторон на самом элементе, а также на окружающем его контейнере
       </li>
       <li class="list__item">При добавлении дополнительных элементов, необходимо менять расчет для контейнера</li>

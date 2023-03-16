@@ -1,0 +1,58 @@
+.animation__row {
+   padding: 70px 0px 0px 0px;
+   --modifier: calc((40rem - 100%) * 999);
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+}
+
+.animation__item {
+   position: relative;
+   flex-basis: max(var(--modifier), 0px);
+   aspect-ratio: var(--ratio);
+   flex-grow: calc(var(--ratio));
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   background: hsl(227, 9%, 31%);
+}
+
+.planet {
+   background: hsl(220, 90%, 45%);
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+}
+
+.moon {
+   background: hsla(0, 0%, 83%, 0.7);
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   margin: auto;
+}
+
+@keyframes orbit {
+   from {
+      transform:
+         rotate(0deg) translateX(85px);
+   }
+
+   to {
+      transform:
+         rotate(360deg) translateX(85px);
+   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+   .moon {
+      animation:
+         orbit 6000ms linear infinite;
+   }
+}
