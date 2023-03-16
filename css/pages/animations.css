@@ -56,3 +56,64 @@
          orbit 6000ms linear infinite;
    }
 }
+
+/* ============================================================================================ */
+.animation__item_2 {
+   background: #363636;
+}
+
+.spinny-thing {
+   --spinny: 10rem;
+   --pos-spinny: calc(var(--spinny) / 50);
+   --shadow-spinny: calc(var(--spinny) / 10);
+   position: relative;
+   width: var(--spinny);
+   height: var(--spinny);
+   border-radius: 50%;
+   background: linear-gradient(45deg, transparent, transparent 40%, #ee55ff);
+}
+
+
+.spinny-thing::before {
+   content: "";
+   position: absolute;
+   top: var(--pos-spinny);
+   left: var(--pos-spinny);
+   right: var(--pos-spinny);
+   bottom: var(--pos-spinny);
+   z-index: 100;
+   background: #363636;
+   border-radius: 50%;
+}
+
+.spinny-thing::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: var(--pos-spinny);
+   right: var(--pos-spinny);
+   bottom: var(--pos-spinny);
+   z-index: 1;
+   background: linear-gradient(45deg, transparent, transparent 40%, #ee55ff);
+   border-radius: 50%;
+   filter: blur(var(--shadow-spinny));
+}
+
+@keyframes spinny {
+   0% {
+      transform: rotate(0);
+      filter: hue-rotate(0);
+   }
+
+   100% {
+      transform: rotate(360deg);
+      filter: hue-rotate(360deg);
+   }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+   .spinny-thing {
+      animation:
+         spinny 1500ms linear infinite;
+   }
+}
