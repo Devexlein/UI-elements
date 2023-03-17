@@ -119,7 +119,9 @@ body._touch .menu__list>li._active .menu__arrow {
 @media (min-width: 767.98px) {
    .menu__list {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: flex-end;
    }
 
    .menu__list>li {

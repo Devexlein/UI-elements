@@ -13,6 +13,7 @@
 @import './blocks/lists.css';
 
 /* Pages */
+@import './pages/cards.css';
 @import './pages/galleries.css';
 @import './pages/animations.css';
 @import './pages/sliders.css';

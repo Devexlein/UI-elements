@@ -133,11 +133,14 @@
 }
 
 .centerflex>* {
+   flex-grow: 1;
    /* ↓ Half the value to each element, combining to make the whole */
    margin: calc(var(--centerflex-gap, 1rem) / 2) auto;
 }
 
 .centerflex>*:first-child {
+   /* Drag the first child to the beginning,
+      so that the pseudo element moves to the center */
    order: -1;
 }
 
@@ -146,13 +149,13 @@
    max-width: 100%;
 }
 
-ul {
+.centerflex__nav ul {
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
    margin: -0.5em;
 }
 
-li {
+.centerflex__nav li {
    margin: 0.5em;
 }

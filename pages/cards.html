@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Примеры карточек</title>
+   <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body id="cards">
+   <div class="controls">
+      <h3 class="controls__headline">
+         Try some resizing:
+      </h3>
+      <div class="font-size-control">
+         <span class="label">HTML font-size:</span>
+         <input type="range" id="font-size-control" min="50" max="150" step="2" value="100">
+         <span id="percent" class="result">100%</span>
+      </div>
+      <div class="font-size-control">
+         <span class="label">Content --fs:</span>
+         <input type="range" id="content-size-control" min="0.5" max="1.5" step="0.05" value="1">
+         <span id="contentResult" class="result">1rem</span>
+      </div>
+      <div class="font-size-control">
+         <span class="label">Sidebar --fs:</span>
+         <input type="range" id="sidebar-size-control" min="0.5" max="1.5" step="0.05" value="0.75">
+         <span id="sidebarResult" class="result">0.75rem</span>
+      </div>
+      <a class="controls__link" href="https://9elements.com/io/sizing-blocks-or-areas-using-css-custom-properties/"
+         target="_blank">Read the Article</a>
+   </div>
+
+   <div class="cards__container">
+
+      <div class="content">
+         <div class="teaser">
+            <h2 class="teaser__headline">Headline</h2>
+            <p class="teaser__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, voluptatibus quia
+               adipisci vel blanditiis voluptatum deserunt!</p>
+            <a href="#" class="teaser__btn">My Button</a>
+         </div>
+         <div class="teaser">
+            <h2 class="teaser__headline">Headline</h2>
+            <p class="teaser__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, voluptatibus quia
+               adipisci vel blanditiis voluptatum deserunt!</p>
+            <a href="#" class="teaser__btn">My Button</a>
+         </div>
+      </div>
+
+      <div class="sidebar is--tiny">
+         <div class="teaser">
+            <h2 class="teaser__headline">Headline</h2>
+            <p class="teaser__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, voluptatibus quia
+               adipisci vel blanditiis voluptatum deserunt!</p>
+            <a href="#" class="teaser__btn">My Button</a>
+         </div>
+         <div class="teaser">
+            <h2 class="teaser__headline">Headline</h2>
+            <p class="teaser__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, voluptatibus quia
+               adipisci vel blanditiis voluptatum deserunt!</p>
+            <a href="#" class="teaser__btn">My Button</a>
+         </div>
+      </div>
+   </div>
+
+   <script src="/js/controls.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+:root {
+   --fs: 1rem;
+   --fsn: 1;
+}
+
+#cards {
+   font-size: 100%;
+   transition: font-size 0.4s ease-out;
+}
+
+/* Teaser Component */
+.teaser {
+   font-size: var(--fs);
+   width: 100%;
+   max-width: 20em;
+   padding: 1.5em 2em;
+   box-shadow: 0 1em 1.25em -0.5em #0004;
+   border-radius: 0.25em;
+   margin: 0 1em 2em;
+}
+
+.teaser__headline {
+   font-size: 2em;
+   margin: 0 0 0.5em;
+}
+
+.teaser__body {
+   font-size: 1.125em;
+   margin: 0 0 1em;
+   line-height: 1.5;
+}
+
+/* Button Component */
+.teaser__btn {
+   font-size: var(--fs);
+   padding: 0.875em 1.5em 0.75em;
+}
+
+/* Helper Classes for absolute sizing
+// One is used for the initial sizing on the sidebar */
+
+.is--tiny {
+   --fs: 0.75rem;
+}
+
+.is--small {
+   --fs: 0.875rem;
+}
+
+.is--regular {
+   --fs: 1rem;
+}
+
+.is--large {
+   --fs: 1.25rem;
+}
+
+.is--xlarge {
+   --fs: 1.5rem;
+}
+
+/* ---------------------------------
+// Styles not relevant for this Demo
+// --------------------------------- */
+
+body#cards {
+   background: #eef;
+}
+
+.cards__container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   min-height: 100vh;
+}
+
+.content {
+   font-size: var(--fs);
+   padding: 1em;
+   flex-grow: 99999;
+   display: flex;
+   align-items: flex-start;
+   flex-wrap: wrap;
+   flex-basis: 22em;
+   align-content: flex-start;
+}
+
+.sidebar {
+   font-size: var(--fs);
+   background: #003;
+   padding: 1em;
+   flex-grow: 1;
+   display: flex;
+   flex-wrap: wrap;
+   flex-basis: 24em;
+   align-items: flex-start;
+   align-content: flex-start;
+}
+
+.teaser {
+   vertical-align: top;
+   background: #fff;
+}
+
+.teaser__btn {
+   text-transform: uppercase;
+   font-weight: bold;
+   text-decoration: none;
+   display: inline-block;
+   background: #f09;
+   color: #fff;
+}
+
+/* ---------------------------------
+// Interactive Controls
+// --------------------------------- */
+
+.controls {
+   /* Everything here is set in px, as
+   I don't want it to resize itself. */
+   position: fixed;
+   left: 10px;
+   bottom: 10px;
+   background: #333333cc;
+   border-radius: 4px;
+}
+
+.controls__headline {
+   color: #fff;
+   margin: 12px 18px 10px;
+   font-size: 20px;
+}
+
+.controls__link {
+   display: block;
+   padding: 12px 18px 10px;
+   border-top: 1px solid #333a;
+   color: #0ff;
+   font-weight: bold;
+   letter-spacing: 0.05em;
+   text-decoration: none;
+   font-size: 16px;
+}
+
+.controls__link:hover {
+   text-decoration: underline;
+}
+
+.font-size-control {
+   color: #eee;
+   padding: 12px 10px 10px;
+   margin: 0;
+   font-size: 16px;
+   border-top: 1px solid #333a;
+}
+
+.font-size-control>* {
+   vertical-align: middle;
+   margin: 0 8px;
+}
+
+.font-size-control span {
+   display: inline-block;
+   min-width: 7ch;
+}
+
+.label {
+   width: 120px;
+   font-weight: bold;
+}
+
+.result {
+   text-align: right;
+}
