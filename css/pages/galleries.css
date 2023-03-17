@@ -1,16 +1,19 @@
-.row {
+.wrap {
    margin: 2rem auto;
    padding: 0.5rem;
    max-width: 50rem;
    border: 1px dashed rgb(0 0 0 / 0.4);
+}
+
+.row {
    margin-inline: auto;
    display: flex;
    align-items: flex-start;
 }
 
 .item {
-   aspect-ratio: var(--ratio);
    background: rgb(156, 170, 251);
+   aspect-ratio: var(--ratio);
    font-weight: 700;
    display: flex;
    align-items: center;
@@ -53,7 +56,9 @@
    Работает независимо от количества элементов в строке */
 
 .row_2 {
-   gap: 1rem;
+   margin: 0.2rem auto;
+   column-gap: 0.2rem;
+
 }
 
 .item_2 {

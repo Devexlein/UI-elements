@@ -12,34 +12,44 @@
 <body>
    <h2>Макет: несколько рядов по 2 изображения рядом (должны занимать одинаковую высоту и заполнять всю строку) с
       фиксированным соотношением (от 16:9 до 3:4, т.е. альбомные, квадратные, портретные) сторон</h2>
-   <div class="row row_3">
-      <div style="--ratio: 1024 / 600;" class="item item_3">
-         <img src="https://image-placeholder.com/images/actual-size/1024x600.png" width="1024" height="600" alt="">
-      </div>
-      <div style="--ratio: 640 / 640;" class="item item_3">
-         <img src="https://image-placeholder.com/images/actual-size/640x640.png" width="640" height="640" alt="">
-      </div>
-      <div style="--ratio: 375 / 500;" class="item item_3">
-         <img src="https://image-placeholder.com/images/actual-size/375x500.png" width="375" height="500" alt="">
+   <div class="wrap">
+      <div class="row row_3">
+         <div style="--ratio: 1024 / 600;" class="item item_3">
+            <img src="https://image-placeholder.com/images/actual-size/1024x600.png" width="1024" height="600" alt="">
+         </div>
+         <div style="--ratio: 640 / 640;" class="item item_3">
+            <img src="https://image-placeholder.com/images/actual-size/640x640.png" width="640" height="640" alt="">
+         </div>
+         <div style="--ratio: 375 / 500;" class="item item_3">
+            <img src="https://image-placeholder.com/images/actual-size/375x500.png" width="375" height="500" alt="">
+         </div>
       </div>
    </div>
    <h3>Решение №3: Расширенное с добавлением модификатора, который переключает значение flex-basis с нуля на очень
       высокое число на брейкпойнте, что позволяет получить сложенный макет на маленьких экранах и хороший ровный ряд
       изображений на больших экранах</h3>
-   <div class="row row_2">
-      <div class="item item_2" style="--ratio: 4 / 3;">4:3</div>
-      <div class="item item_2" style="--ratio: 2 / 3;">2:3</div>
-   </div>
-   <div class="row row_2">
-      <div class="item item_2" style="--ratio: 4 / 3;">4:3</div>
-      <div class="item item_2" style="--ratio: 2 / 3;">2:3</div>
-      <div class="item item_2" style="--ratio: 1 / 1;">1:1</div>
+   <div class="wrap">
+      <div class="row row_2">
+         <div class="item item_2" style="--ratio: 4 / 3;">4:3</div>
+         <div class="item item_2" style="--ratio: 2 / 3;">2:3</div>
+      </div>
+      <div class="row row_2">
+         <div class="item item_2" style="--ratio: 1 / 1;">1:1</div>
+         <div class="item item_2" style="--ratio: 16 / 9;">16:9</div>
+      </div>
+      <div class="row row_2">
+         <div class="item item_2" style="--ratio: 3 / 2;">3:2</div>
+         <div class="item item_2" style="--ratio: 3 / 2;">3:2</div>
+         <!-- <div class="item item_2" style="--ratio: 1 / 1;">1:1</div> -->
+      </div>
    </div>
    <h3>Решение №2: С помощью flex-grow вместо установления ширины/высоты элементов, указываем им, насколько они могут
       увеличиваться</h3>
-   <div class="row row_1">
-      <div class="item item_1" style="--ratio: 4 / 3;">4:3</div>
-      <div class="item item_1" style="--ratio: 2 / 3;">2:3</div>
+   <div class="wrap">
+      <div class="row row_1">
+         <div class="item item_1" style="--ratio: 4 / 3;">4:3</div>
+         <div class="item item_1" style="--ratio: 2 / 3;">2:3</div>
+      </div>
    </div>
    <h3>Решение №1: Определяем соотношение сторон для строки</h3>
    <ol class="list list_disadvantage"><span>Недостатки:</span>
