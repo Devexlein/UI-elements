@@ -99,3 +99,60 @@
    width: 100%;
    height: auto;
 }
+
+/* ============================================================================================ */
+:root {
+   /* ↓ Use these variables to customise the albatross. */
+   --centerflex-gap: 1rem;
+   --centerflex-threshold: 45rem;
+}
+
+.wrap-box {
+   padding: 1em;
+   background: linear-gradient(-135deg, #008, #002);
+   min-height: 20vh;
+   color: #fff;
+}
+
+.centerflex {
+   /* ↓ Save the large negative or large positive value to a variable */
+   --multiplier: calc((var(--centerflex-threshold, 38rem) - 100%) * 999);
+
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   /* ↓ Multiply by -1 to make negative */
+   margin: calc(var(--centerflex-gap, 1rem) / 2 * -1) 0;
+}
+
+.centerflex::before {
+   content: "";
+   flex-grow: 999;
+   /* ↓ If --multiplier is negative, use 0px instead */
+   flex-basis: max(var(--multiplier), 0px);
+}
+
+.centerflex>* {
+   /* ↓ Half the value to each element, combining to make the whole */
+   margin: calc(var(--centerflex-gap, 1rem) / 2) auto;
+}
+
+.centerflex>*:first-child {
+   order: -1;
+}
+
+.centerflex__logo svg {
+   display: block;
+   max-width: 100%;
+}
+
+ul {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin: -0.5em;
+}
+
+li {
+   margin: 0.5em;
+}
