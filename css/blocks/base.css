@@ -59,7 +59,7 @@ h3 {
 }
 
 [class*="_disadvantage"] {
-   color: #c86565;
+   color: #c86565 !important;
 }
 
 .form-row {

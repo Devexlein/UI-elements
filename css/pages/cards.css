@@ -63,15 +63,188 @@
 // Styles not relevant for this Demo
 // --------------------------------- */
 
-body#cards {
-   background: #eef;
+.cards__row {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   min-height: 20vh;
+}
+
+.cards__column {
+   flex: 0 1 25%;
+   padding: 0.5rem;
+   margin: auto;
+}
+
+.card {
+   --bw: 5px;
+   margin: 1rem auto;
+   padding: 1em;
+   position: relative;
+}
+
+.card__text {
+   font-size: calc(var(--fs) / 1.2);
+   color: #eee;
+}
+
+/* не влияет z-index; можем менять ширину прозрачной границы */
+.card_gradient {
+   border: var(--bw) solid transparent;
+   background: linear-gradient(#222, #222),
+      linear-gradient(to right, red, purple);
+   background-repeat: no-repeat;
+   background-origin: padding-box, border-box;
+}
+
+.card_module-wrap {
+   padding: var(--bw);
+   background: linear-gradient(to right, orange, red);
+}
+
+.card__module {
+   background: #222;
+   padding: 1em;
+}
+
+/* вариант №1 */
+.card_rounded {
+   border-radius: 1rem;
+   border-width: calc(var(--bw) * 2);
+   position: relative;
+}
+
+.card_rounded::before {
+   content: "";
+   position: absolute;
+   top: -5px;
+   left: -5px;
+   right: -5px;
+   bottom: -5px;
+   border: 6px solid #222;
+   border-radius: 0.8rem;
+}
+
+/* вариант №2 
+элемент в качестве подложки, уменьшаем внутреннее содержимое */
+
+.card_rounded-box {
+   background: #222;
+   background-clip: padding-box;
+   border: var(--bw) solid transparent;
+   border-radius: 1em;
+}
+
+.card_rounded-box::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: -1;
+   margin: calc(var(--bw) * -1);
+   border-radius: inherit;
+   background: linear-gradient(to right, orange, red);
+}
+
+.card_transparent {
+   border-width: calc(var(--bw) / 1.5);
+   border-style: solid;
+   border-image:
+      linear-gradient(to bottom,
+         red,
+         rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.card_transparent p,
+.card_border-gradient p {
+   color: #222;
+   font-weight: 700;
+}
+
+.card_border-gradient {
+   border: var(--bw) solid;
+   border-image-slice: 1;
+   border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+   /* для получения линии 
+   border-left: 0;
+   border-right: 0;
+   border-bottom: 0;*/
+}
+
+.card_photo {
+   --img-url: url("/img/bg-1.png");
+   flex-shrink: 1;
+   height: calc(150px + 6vw);
+   width: calc(150px + 6vw);
+   border: var(--bw) solid transparent;
+   background-origin: border-box;
+   background-clip: padding-box, border-box;
+   background-size: cover;
+   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+   /* border-radius: 30%;
+   background-image: var(--img-url), linear-gradient(#f9f047, #0fd850); */
+   /* border-radius: 50%;
+   background-image: var(--img-url), linear-gradient(to bottom right, #ff3cac, #562b7c, #2b86c5); */
+   border-radius: 40% 10%;
+   background-image: var(--img-url), linear-gradient(to bottom left, #f83600, #f9d423);
+}
+
+.card_button {
+   display: flex;
+   justify-content: center;
+}
+
+.card__button-border-gradient {
+   --border-width: 4px;
+   --border-radius: 22px;
+   --color-1: #f19f39;
+   --color-2: #de222c;
+   padding: 1em 2em;
+   border-radius: var(--border-radius);
+   background: linear-gradient(to right, var(--color-1), var(--color-2)),
+      linear-gradient(to right, var(--color-1),
+         var(--color-2));
+   background-position: var(--border-radius) 0, var(--border-radius) 100%;
+   background-repeat: no-repeat;
+   background-size: calc(100% - var(--border-radius) - var(--border-radius)) var(--border-width);
+   font-weight: 700;
+   text-transform: uppercase;
+   position: relative;
+}
+
+.card__button-border-gradient:before,
+.card__button-border-gradient:after {
+   content: "";
+   /* display: block; */
+   position: absolute;
+   width: var(--border-radius);
+   top: 0;
+   bottom: 0;
+}
+
+.card__button-border-gradient::before {
+   left: 0;
+   border: var(--border-width) solid var(--color-1);
+   border-top-left-radius: var(--border-radius);
+   border-bottom-left-radius: var(--border-radius);
+   border-right-color: transparent;
+}
+
+.card__button-border-gradient:after {
+   right: 0;
+   border: var(--border-width) solid var(--color-2);
+   border-top-right-radius: var(--border-radius);
+   border-bottom-right-radius: var(--border-radius);
+   border-left-color: transparent;
 }
 
 .cards__container {
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
-   min-height: 100vh;
+   min-height: 60vh;
 }
 
 .content {

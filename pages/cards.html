@@ -10,6 +10,9 @@
 </head>
 
 <body id="cards">
+
+
+
    <div class="controls">
       <h3 class="controls__headline">
          Try some resizing:
@@ -31,6 +34,71 @@
       </div>
       <a class="controls__link" href="https://9elements.com/io/sizing-blocks-or-areas-using-css-custom-properties/"
          target="_blank">Read the Article</a>
+   </div>
+
+
+   <h2>Градиентные рамки:</h2>
+
+   <div class="cards__row">
+      <div class="cards__column">
+         <div class="card card_gradient">
+            <p class="card__text">Градиент границы может быть применен к одному элементу с использованием
+               нескольких фонов и указанием источника фона для каждого из них.</p>
+         </div>
+      </div>
+      <div class="cards__column">
+         <div class="card card_module-wrap">
+            <div class="card__module">
+               <p class="card__text">Градиент формируется внутренним отступом элемента-обертки.</p>
+            </div>
+         </div>
+      </div>
+      <div class="cards__column">
+         <div class="card  card_gradient card_rounded">
+            <p class="card__text">
+               Псевдоэлемент используем для создания закругленного угла с внутренней стороны.
+            </p>
+            <p class="card__text card__text_disadvantage">
+               Недостатки: необходима тщательная подгонка размеров, положения, границ и радиуса.
+            </p>
+         </div>
+      </div>
+      <div class="cards__column">
+         <div class="card card_rounded-box">
+            <p class="card__text">
+               Псевдоэлемент используем в качестве подложки, уменьшаем внутреннее содержимое.
+            </p>
+         </div>
+      </div>
+   </div>
+
+   <div class="cards__row">
+      <div class="cards__column">
+         <div class="card card_transparent">
+            <p class="card__text">Градиент формируется с двух сторон свойством border-image.</p>
+         </div>
+      </div>
+      <div class="cards__column">
+         <div class="card card_border-gradient">
+            <p class="card__text">Одновременное использование свойств border-image и border-image-slice - самый простой
+               синтаксис для градиентной границы.</p>
+            <p class="card__text card__text_disadvantage">
+               Недостатки: способ несовместим со свойством border-radius.
+            </p>
+         </div>
+      </div>
+      <div class="cards__column">
+         <div class="card card_photo">
+         </div>
+      </div>
+      <div class="cards__column">
+         <div class="card card_button">
+            <button class="card__button-border-gradient">
+               I have a gradient
+            </button>
+         </div>
+      </div>
+
    </div>
 
    <div class="cards__container">
