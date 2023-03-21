@@ -201,6 +201,7 @@
    --border-radius: 22px;
    --color-1: #f19f39;
    --color-2: #de222c;
+   --color-shadow: rgba(241, 158, 57, 0.25);
    padding: 1em 2em;
    border-radius: var(--border-radius);
    background: linear-gradient(to right, var(--color-1), var(--color-2)),
@@ -212,12 +213,16 @@
    font-weight: 700;
    text-transform: uppercase;
    position: relative;
+   transition: box-shadow 0.2s ease-in;
+}
+
+.card__button-border-gradient:hover {
+   box-shadow: 0 0 25px 5px var(--color-shadow);
 }
 
 .card__button-border-gradient:before,
 .card__button-border-gradient:after {
    content: "";
-   /* display: block; */
    position: absolute;
    width: var(--border-radius);
    top: 0;
