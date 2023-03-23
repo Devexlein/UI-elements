@@ -11,9 +11,7 @@
 
    <script src="https://api-maps.yandex.ru/3.0/?apikey=f5366849-3fbc-46d6-9f35-fe6e8d9919c7&lang=ru_RU"></script>
    <script>
-      ymaps3.ready.then(init);
-
-      function init() {
+      ymaps3.ready.then(() => {
          console.log(1);
          const map = new ymaps3.YMap(document.getElementById('map'), {
             location: {
@@ -21,7 +19,7 @@
                zoom: 7
             }
          });
-      }
+      });
    </script>
 </head>
 
