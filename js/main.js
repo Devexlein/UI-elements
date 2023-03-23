@@ -279,3 +279,20 @@ window.setInterval(() => {
    // the colors in the next loop.
    cycleIndex++;
 }, intervalDelay);
+
+
+maps();
+
+async function maps() {
+   await ymaps3.ready;
+   const map = new ymaps3.YMap(document.getElementById('map'), {
+      location {
+      center: [37.64, 55.76],
+      zoom: 7
+   },
+      [
+         // Добавляем слой для отображения схематической карты Яндекса.
+         new ymaps3.YMapDefaultSchemeLayer();
+      ]
+})
+}
