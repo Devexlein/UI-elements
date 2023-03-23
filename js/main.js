@@ -285,6 +285,7 @@ maps();
 
 async function maps() {
    await ymaps3.ready;
+   console.log(1);
    const map = new ymaps3.YMap(document.getElementById('map'), {
       location {
       center: [37.64, 55.76],
