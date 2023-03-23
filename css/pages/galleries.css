@@ -1,3 +1,13 @@
+.sticky-footer>footer {
+   position: sticky;
+   top: 100vh;
+}
+
+footer {
+   height: 100px;
+   background: rgb(88, 88, 202);
+}
+
 .wrap {
    margin: 2rem auto;
    padding: 0.5rem;
