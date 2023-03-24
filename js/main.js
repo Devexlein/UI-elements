@@ -305,7 +305,7 @@ async function main() {
 
    const el = document.createElement('img');
    el.className = 'my-marker';
-   el.src = '../img/maps/placeholder.png';
+   el.src = './img/maps/placeholder.png';
    // el.onclick = () => map.update({ location: { ...LOCATION, duration: 400 } });
    map.addChild(new YMapMarker({ coordinates: LOCATION.center }, el));
 }
