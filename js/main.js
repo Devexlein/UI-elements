@@ -281,19 +281,62 @@ window.setInterval(() => {
 }, intervalDelay);
 
 
-maps();
-
-async function maps() {
+// Подключение карты
+main();
+async function main() {
+   var map = null;
    await ymaps3.ready;
-   console.log(2);
-   const map = new ymaps3.YMap(document.getElementById('map'), {
-      location {
-      center: [37.64, 55.76],
-      zoom: 7
-   },
-      [
-         // Добавляем слой для отображения схематической карты Яндекса.
-         new ymaps3.YMapDefaultSchemeLayer();
-      ]
-})
+   const { YMap, YMapDefaultSchemeLayer, YMapControls, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
+   const LOCATION = {
+      center: [37.703181999999984, 55.72321706901226],
+      zoom: 17
+   };
+
+   const { YMapZoomControl } = await ymaps3.import(
+      "@yandex/ymaps3-controls@0.0.1"
+   );
+
+   map = new YMap(document.getElementById("map"), { location: LOCATION }, [
+      new YMapDefaultSchemeLayer(),
+      new YMapControls({ position: "right" }, [new YMapZoomControl({})])
+   ]);
+
+   map.addChild(new YMapDefaultFeaturesLayer());
+
+   const el = document.createElement('img');
+   el.className = 'my-marker';
+   el.src = '../img/maps/placeholder.png';
+   // el.onclick = () => map.update({ location: { ...LOCATION, duration: 400 } });
+   map.addChild(new YMapMarker({ coordinates: LOCATION.center }, el));
 }
+
+
+/* Подключение API 2.1 - предыдущая версия*/
+// let center = [55.72321706901226, 37.703181999999984];
+
+// function init() {
+//    let map = new ymaps.Map('map', {
+//       center: center,
+//       zoom: 17
+//    });
+
+//    let placemark = new ymaps.Placemark(center, {}, {
+//       iconLayout: "default#image",
+//       iconImageHref: './img/showroom/location-map.png',
+//       iconImageSize: [50, 50],
+//       iconImageOffset: [-17, -40],
+//    });
+
+//    map.controls.remove('geolocationControl'); // удаляем геолокацию
+//    map.controls.remove('searchControl'); // удаляем поиск
+//    map.controls.remove('trafficControl'); // удаляем контроль трафика
+//    map.controls.remove('typeSelector'); // удаляем тип
+//    // map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+//    // map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+//    map.controls.remove('rulerControl'); // удаляем контрол правил
+//    // map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+
+//    map.geoObjects.add(placemark);
+// }
+
+// ymaps.ready(init);

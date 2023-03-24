@@ -1,0 +1,26 @@
+.yandex-map {
+   display: flex;
+   flex-direction: column;
+}
+
+.map {
+   width: 600px;
+   height: 400px;
+   overflow: hidden;
+   border: 3px solid #aee8cd;
+   border-radius: 15px;
+   z-index: 1;
+}
+
+.my-marker {
+   position: relative;
+   width: 50px;
+   height: 50px;
+   transform: translate(-50%, calc(-50% - 30px));
+   cursor: pointer;
+   z-index: 5;
+}
+
+.my-marker img {
+   width: 100%;
+}

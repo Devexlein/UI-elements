@@ -10,17 +10,6 @@
    <link rel="stylesheet" href="./css/style.css">
 
    <script src="https://api-maps.yandex.ru/3.0/?apikey=f5366849-3fbc-46d6-9f35-fe6e8d9919c7&lang=ru_RU"></script>
-   <script>
-      ymaps3.ready.then(() => {
-         console.log(1);
-         const map = new ymaps3.YMap(document.getElementById('map'), {
-            location: {
-               center: [37.64, 55.76],
-               zoom: 7
-            }
-         });
-      });
-   </script>
 </head>
 
 <body>
@@ -416,11 +405,14 @@
             <div class="maps-boxes__container">
                <h2>Подключение и стилизация карт</h2>
                <div class="form-row">
-                  <h3>Бесплатная версия API Яндекс Карты (3.0)</h3>
-                  <div id="map" style="width: 600px; height: 400px"></div>
+                  <div class="yandex-map">
+                     <h3>Бесплатная версия API Яндекс Карты (3.0)</h3>
+                     <div id="map" class="map"></div>
+                  </div>
                </div>
             </div>
          </section>
+
       </main>
    </div>
 
