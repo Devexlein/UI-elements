@@ -9,7 +9,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="./css/style.css">
 
-   <script src="https://api-maps.yandex.ru/3.0/?apikey=f5366849-3fbc-46d6-9f35-fe6e8d9919c7&lang=ru_RU"></script>
+   <!-- <script src="https://api-maps.yandex.ru/3.0/?apikey=f5366849-3fbc-46d6-9f35-fe6e8d9919c7&lang=ru_RU"></script> -->
 </head>
 
 <body>
@@ -61,8 +61,48 @@
          <h1>Кастомные элементы</h1>
 
          <section id="tabs" class="tabs">
+
             <div class="tabs__container">
                <h2>Табы</h2>
+               <div class="content-3">
+                  <!-- вариант №3 -->
+                  <h3>CSS (+animation) и JS</h3>
+                  <div class="tabs__box-3">
+                     <div class="tabs__nav">
+                        <button class="active" type="button">Tab Button 1</button>
+                        <button type="button">Tab Button 2</button>
+                        <button type="button">Tab Button 3</button>
+                     </div>
+                     <div class="tabs__content-item">
+                        <img src="./img/tabs-slide1.jpg" alt="Мужчина возле озера">
+                        <h4>Код и стили</h4>
+                        <div class="tabs__desc">
+                           <p>В данном примере количество используемых классов минимизировано, стилизация элементов -
+                              через селекторы тегов и их комбинации, в т.ч. и при обращении
+                              к элементам в JS (кнопки для переключения содержимого).</p>
+                        </div>
+                     </div>
+                     <div class="tabs__content-item">
+                        <img src="./img/tabs-slide2.jpg" alt="Фото ночной дороги">
+                        <h4>Неразрывный пробел</h4>
+                        <div class="tabs__desc">
+                           <p>Один из способов избежать нежелательного переноса на отдельную строку коротких слов,
+                              предлогов - использовать вместо пробела - символ "неразрывного&nbsp;пробела":&nbsp;<span>
+                                 nbsp</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="tabs__content-item">
+                        <img src="./img/tabs-slide3.jpg" alt="Фото велосипеда у стены">
+                        <h4>"Эффекты"</h4>
+                        <div class="tabs__desc">
+                           <p>К переключению табов добавлена анимация плавного проявления, в частности изменение
+                              значения свойства opacity от 0,3 до 1.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
                <div class="form-row">
                   <!-- вариант №2 -->
                   <div class="form-column">
@@ -86,8 +126,7 @@
                                     <li class="tabs__box-item">
                                        <a href="#" class="tabs__box-link"
                                           style="background-image: url('./img/01.png')"><span
-                                             class="tabs__box-text">Занятия
-                                             йогой</span></a>
+                                             class="tabs__box-text">Занятия йогой</span></a>
                                     </li>
                                     <li class="tabs__box-item">
                                        <a href="#" class="tabs__box-link"
@@ -97,16 +136,14 @@
                                     <li class="tabs__box-item">
                                        <a href="#" class="tabs__box-link"
                                           style="background-image: url('./img/03.png')"><span
-                                             class="tabs__box-text">Силовые
-                                             тренировки</span></a>
+                                             class="tabs__box-text">Силовые тренировки</span></a>
                                     </li>
                                  </ul>
                               </div>
                            </div>
                            <div class="tabs__box" data-tabs-target="archive">
                               <div class="tabs__box-content"><span>Архив.</span> Lorem ipsum dolor sit amet
-                                 consectetur
-                                 adipisicing elit.
+                                 consectetur adipisicing elit.
                               </div>
                            </div>
                            <div class="tabs__box" data-tabs-target="settings">
@@ -146,33 +183,24 @@
                            </nav>
                            <div class="tabs__body">
                               <div class="tabs__block" id="tab_01"><span>Первая вкладка.</span> Lorem ipsum dolor sit
-                                 amet
-                                 consectetur
-                                 adipisicing elit.
-                                 Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem eveniet blanditiis aliquam
-                                 pariatur
-                                 quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
+                                 amet consectetur adipisicing elit. Dicta quisquam fuga ipsum quaerat, adipisci, saepe
+                                 autem eveniet blanditiis aliquam
+                                 pariatur quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
                                  reprehenderit.
                               </div>
                               <div class="tabs__block" id="tab_02"><span>Вторая вкладка.</span> Lorem ipsum dolor sit
-                                 amet
-                                 consectetur
-                                 adipisicing elit.
-                                 Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem eveniet blanditiis aliquam
-                                 pariatur
-                                 quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita , saepe
-                                 autem
-                                 eveniet blanditiis aliquam pariatur
-                                 quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
+                                 amet consectetur adipisicing elit. Dicta quisquam fuga ipsum quaerat, adipisci, saepe
+                                 autem eveniet blanditiis aliquam
+                                 pariatur quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita ,
+                                 saepe
+                                 autem eveniet blanditiis aliquam pariatur quibusdam fugit corrupti provident est
+                                 mollitia reiciendis possimus expedita
                                  reprehenderit.
                               </div>
                               <div class="tabs__block" id="tab_03"><span>Третья вкладка.</span> Lorem ipsum dolor sit
-                                 amet
-                                 consectetur
-                                 adipisicing elit.
-                                 Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem eveniet blanditiis aliquam
-                                 pariatur
-                                 quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
+                                 amet consectetur adipisicing elit. Dicta quisquam fuga ipsum quaerat, adipisci, saepe
+                                 autem eveniet blanditiis aliquam
+                                 pariatur quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
                                  reprehenderit.
                               </div>
                            </div>

@@ -32,7 +32,7 @@ h6 {
 p {
    overflow-wrap: break-word;
    /* используем дефисы */
-   hyphens: auto;
+   /* hyphens: auto; */
 }
 
 a,

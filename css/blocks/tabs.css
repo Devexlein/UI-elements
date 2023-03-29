@@ -1,4 +1,74 @@
 /* Табы */
+/* вариант 3*/
+.content-3 {
+   padding: 10px 5px 20px;
+   color: #676770;
+   font-size: 14px;
+}
+
+.tabs__box-3 {
+   width: 50%;
+}
+
+.tabs__nav {
+   margin: 15px 0;
+}
+
+.tabs__nav button {
+   padding: 0 20px;
+   background-color: #92a0ad;
+   color: #fff;
+   font-weight: 500;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   border-radius: 4px;
+}
+
+.tabs__nav button.active {
+   background-color: #2e80b6;
+}
+
+.tabs__nav button+button {
+   margin-left: 10px;
+}
+
+.tabs__content-item {
+   text-align: center;
+   animation: fade 1.5s;
+}
+
+@keyframes fade {
+   from {
+      opacity: 0.3;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+.tabs__content-item img {
+   margin-bottom: 15px;
+   border-radius: 4px;
+   max-width: 100%;
+}
+
+.tabs__content-item h4 {
+   margin-bottom: 5px;
+   font-size: 20px;
+}
+
+.tabs__desc {
+   padding: 0 10px;
+
+}
+
+.tabs__desc span {
+   font-weight: 600;
+}
+
+/* вариант 1*/
+
 .content-1 {
    padding: 10px;
 }

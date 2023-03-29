@@ -87,3 +87,7 @@ h3 {
 label {
    cursor: pointer;
 }
+
+.hide {
+   display: none;
+}
