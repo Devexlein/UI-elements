@@ -310,33 +310,33 @@ window.setInterval(() => {
 
 
 // Подключение карты
-// main();
-// async function main() {
-//    var map = null;
-//    await ymaps3.ready;
-//    const { YMap, YMapDefaultSchemeLayer, YMapControls, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
-//    const LOCATION = {
-//       center: [37.703181999999984, 55.72321706901226],
-//       zoom: 17
-//    };
+main();
+async function main() {
+   var map = null;
+   await ymaps3.ready;
+   const { YMap, YMapDefaultSchemeLayer, YMapControls, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
+   const LOCATION = {
+      center: [37.703181999999984, 55.72321706901226],
+      zoom: 17
+   };
 
-//    const { YMapZoomControl } = await ymaps3.import(
-//       "@yandex/ymaps3-controls@0.0.1"
-//    );
+   const { YMapZoomControl } = await ymaps3.import(
+      "@yandex/ymaps3-controls@0.0.1"
+   );
 
-//    map = new YMap(document.getElementById("map"), { location: LOCATION }, [
-//       new YMapDefaultSchemeLayer(),
-//       new YMapControls({ position: "right" }, [new YMapZoomControl({})])
-//    ]);
+   map = new YMap(document.getElementById("map"), { location: LOCATION }, [
+      new YMapDefaultSchemeLayer(),
+      new YMapControls({ position: "right" }, [new YMapZoomControl({})])
+   ]);
 
-//    map.addChild(new YMapDefaultFeaturesLayer());
+   map.addChild(new YMapDefaultFeaturesLayer());
 
-//    const el = document.createElement('img');
-//    el.className = 'my-marker';
-//    el.src = './img/maps/placeholder.png';
-//    // el.onclick = () => map.update({ location: { ...LOCATION, duration: 400 } });
-//    map.addChild(new YMapMarker({ coordinates: LOCATION.center }, el));
-// }
+   const el = document.createElement('img');
+   el.className = 'my-marker';
+   el.src = './img/maps/placeholder.png';
+   // el.onclick = () => map.update({ location: { ...LOCATION, duration: 400 } });
+   map.addChild(new YMapMarker({ coordinates: LOCATION.center }, el));
+}
 
 
 /* Подключение API 2.1 - предыдущая версия*/

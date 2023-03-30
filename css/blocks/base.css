@@ -64,13 +64,14 @@ h3 {
 
 .form-row {
    display: flex;
+   flex-wrap: wrap;
    justify-content: space-between;
    background: rgba(126, 155, 189, 0.2);
    padding: 15px 5px;
 }
 
 .form-column {
-   flex: 0 1 50%;
+   flex: 1 1 auto;
 }
 
 .form-group-title {
