@@ -30,6 +30,7 @@ h6 {
 }
 
 p {
+   font: inherit;
    overflow-wrap: break-word;
    /* используем дефисы */
    /* hyphens: auto; */
@@ -72,14 +73,12 @@ video,
 canvas,
 svg {
    display: block;
-   /* max-width: 100%; */
-}
-
-img {
+   max-width: 100%;
    vertical-align: top;
 }
 
-button {
+button,
+label {
    cursor: pointer;
 }
 
