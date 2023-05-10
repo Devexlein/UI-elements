@@ -31,6 +31,8 @@
 
 label .toggle__realy-input {
    position: absolute;
+   -webkit-appearance: none;
+   -moz-appearance: none;
    appearance: none;
 }
 
@@ -56,6 +58,7 @@ label .toggle__realy-input:checked~.toggle__realy-icon {
    width: 10px;
    height: 100%;
    background: linear-gradient(#fff, #fff, #e3e3e3);
+   -webkit-filter: blur(1px);
    filter: blur(1px);
    z-index: 1;
 }
@@ -68,6 +71,7 @@ label .toggle__realy-input:checked~.toggle__realy-icon {
    width: 10px;
    height: 100%;
    background: #9d9d9d;
+   -webkit-filter: blur(1px);
    filter: blur(1px);
 }
 
@@ -107,6 +111,7 @@ label .toggle__realy-input:checked~.toggle__realy-icon {
 
 label .toggle__realy-input:checked~.toggle__realy-icon .toggle__realy-iconbox svg {
    fill: #00ffe2;
+   -webkit-filter: drop-shadow(0 0 5px #00ffe2) drop-shadow(0 0 15px #00ffe2);
    filter: drop-shadow(0 0 5px #00ffe2) drop-shadow(0 0 15px #00ffe2);
 }
 
