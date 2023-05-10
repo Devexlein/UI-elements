@@ -89,6 +89,12 @@ label {
    cursor: pointer;
 }
 
+.form-column .link {
+   display: block;
+   font-size: 10px;
+   margin-bottom: -15px;
+}
+
 .hide {
    display: none;
 }

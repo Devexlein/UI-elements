@@ -1,4 +1,6 @@
 /* Чекбоксы, радиокнопки */
+
+/* вариант №1 */
 .real-checkbox,
 .real-radio {
    width: 0;
@@ -70,4 +72,104 @@
 
 .real-radio:checked+.custom-radio::before {
    transform: translate(-50%, -50%) scale(1);
+}
+
+/* вариант №2 онлайновая загрузка изображений, декодируем https://yoksel.github.io/url-encoder/ */
+
+.check {
+   display: inline-block;
+   padding-left: 1.2em;
+   line-height: 1;
+}
+
+.check__input {
+   position: absolute;
+   /* уберет браузерные стили, не работает в IE */
+   /* appearance: none; */
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   clip: rect(0 0 0 0);
+}
+
+.check__box {
+   position: absolute;
+   margin-left: -1.2em;
+   width: 1em;
+   height: 1em;
+   vertical-align: middle;
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='3' y='3' width='14' height='14' fill='%23fff' stroke='%234a90e2' stroke-width='2' rx='2'/%3E%3C/svg%3E");
+}
+
+/* Checked */
+.check__input:checked+.check__box {
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='2' y='2' width='16' height='16' fill='%234A90E2' rx='3'/%3E%3Cpolyline fill='none' stroke='%23fff' stroke-width='3' points='5 9 9 13 15 6'/%3E%3C/svg%3E");
+}
+
+/* Focused */
+.check__input:focus+.check__box {
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' fill='%237ed321' rx='4'/%3E%3Crect width='14' height='14' x='3' y='3' fill='%23fff' stroke='%234a90e2' stroke-width='2' rx='2'/%3E%3C/svg%3E");
+}
+
+.check__input:checked:focus+.check__box {
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' fill='%237ed321' rx='4'/%3E%3Crect width='16' height='16' x='2' y='2' fill='%234a90e2' rx='3'/%3E%3Cpolyline fill='none' stroke='%23fff' stroke-width='3' points='5 9 9 13 15 6'/%3E%3C/svg%3E");
+}
+
+/* Disabled */
+.check__input:disabled+.check__box {
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='3' y='3' width='14' height='14' fill='%23fff' stroke='%239b9b9b' stroke-width='2' rx='2'/%3E%3C/svg%3E");
+}
+
+.check__input:checked:disabled+.check__box {
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect x='2' y='2' width='16' height='16' fill='%239B9B9B' rx='3'/%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='3' points='5 9 9 13 15 6'/%3E%3C/svg%3E");
+}
+
+/* вариант №2 отрисовываем стилями */
+.check-1 {
+   padding-left: 1.2em;
+}
+
+.check__input-1 {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   clip: rect(0 0 0 0);
+}
+
+.check__box-1 {
+   position: absolute;
+   margin-top: 0.2em;
+   margin-left: -1em;
+   width: 0.6em;
+   height: 0.6em;
+   overflow: hidden;
+   border-radius: 0.05em;
+   background-color: white;
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+   box-shadow: 0 0 0 0.1em #4A90E2;
+}
+
+/* Checked */
+.check__input-1:checked+.check__box-1 {
+   background-color: #4A90E2;
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolyline fill='none' stroke='%23fff' stroke-width='3' points='1.079 4.999 5 9 10.837 2'/%3E%3C/svg%3E");
+}
+
+/* Focused */
+.check__input-1:focus+.check__box-1 {
+   box-shadow:
+      0 0 0 0.1em #4A90E2,
+      0 0 0 0.2em #7ED321;
+}
+
+/* Disabled */
+.check__input-1:disabled+.check__box-1 {
+   box-shadow: 0 0 0 0.1em #9B9B9B;
+}
+
+.check__input-1:checked:disabled+.check__box-1 {
+   background-color: #9B9B9B;
 }
