@@ -9,6 +9,107 @@
    appearance: none;
 }
 
+/* вариант 4*/
+.toggle__realy-label {
+   position: relative;
+   width: 120px;
+   height: 60px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* background: #777; */
+}
+
+.toggle__realy-label::before {
+   content: '';
+   position: absolute;
+   width: 60%;
+   height: 4px;
+   background: #444;
+   border-radius: 4px;
+}
+
+label .toggle__realy-input {
+   position: absolute;
+   appearance: none;
+}
+
+
+.toggle__realy-icon {
+   position: absolute;
+   left: 0;
+   width: 60px;
+   height: 100%;
+   /* background: tomato; */
+   transition: 0.5s;
+}
+
+label .toggle__realy-input:checked~.toggle__realy-icon {
+   left: 60px;
+}
+
+.toggle__realy-icon::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 10px;
+   height: 100%;
+   background: linear-gradient(#fff, #fff, #e3e3e3);
+   filter: blur(1px);
+   z-index: 1;
+}
+
+.toggle__realy-icon::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: -1px;
+   width: 10px;
+   height: 100%;
+   background: #9d9d9d;
+   filter: blur(1px);
+}
+
+.toggle__realy-shadow {
+   position: absolute;
+   top: 30px;
+   left: -12px;
+   width: 84.85px;
+   height: 300px;
+   background: linear-gradient(180deg, rgba(0, 0, 0, .1),
+         transparent, transparent);
+   transform-origin: top;
+   transform: rotate(315deg);
+   pointer-events: none;
+}
+
+.toggle__realy-iconbox {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(#dbdae1, #a3aaba);
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, .1),
+      20px 20px 15px rgba(0, 0, 0, .1),
+      30px 30px 15px rgba(0, 0, 0, .1),
+      inset 1px 1px 2px #fff;
+}
+
+.toggle__realy-iconbox svg {
+   width: 18px;
+   height: 18px;
+   fill: #555;
+   transition: 0.5s;
+}
+
+label .toggle__realy-input:checked~.toggle__realy-icon .toggle__realy-iconbox svg {
+   fill: #00ffe2;
+   filter: drop-shadow(0 0 5px #00ffe2) drop-shadow(0 0 15px #00ffe2);
+}
+
 /* вариант 3*/
 .toggle__realy {
    position: relative;
@@ -39,7 +140,6 @@ input:checked.toggle__realy {
    background: linear-gradient(0deg, #000, #6b6b6b);
    border-radius: 20px;
    box-shadow: 0 0 0 1px #232323;
-   /* transform: scale(.98, .96); */
    transform: scale(0.98, 0.96);
    transition: .5s;
 }
@@ -66,8 +166,46 @@ input:checked.toggle__realy::after {
    box-shadow: 0 0 5px #13b3ff, 0 0 15px #13b3ff;
 }
 
-/* вариант 1*/
 
+/* вариант 2*/
+.toggle__fake {
+   position: relative;
+   display: inline-block;
+   width: 37px;
+   height: 20px;
+   background-color: #c4c4c4;
+   border-radius: 10px;
+   vertical-align: bottom;
+   margin-right: 7px;
+}
+
+.toggle__fake::before {
+   content: '';
+   width: 16px;
+   height: 16px;
+   background-color: #3C3C3C;
+   border-radius: 50%;
+   position: absolute;
+   top: 2px;
+   left: 2px;
+   transition: all 0.3s ease-in;
+}
+
+.toggle__real:checked+.toggle__fake {
+   background-color: #4f77f9;
+}
+
+.toggle__real:checked+.toggle__fake::before {
+   transform: translateX(105%);
+}
+
+.toggle__title {
+   font-size: 16px;
+   line-height: 1.19;
+   color: #3C3C3C;
+}
+
+/* вариант 1*/
 .toggle_1 {
    --width: 60px;
    --height: 30px;
@@ -111,42 +249,4 @@ input:checked.toggle__realy::after {
    background-color: var(--second-color);
    border-radius: var(--width);
    transition: var(--duration);
-}
-
-/* вариант 2*/
-.toggle__fake {
-   position: relative;
-   display: inline-block;
-   width: 37px;
-   height: 20px;
-   background-color: #c4c4c4;
-   border-radius: 10px;
-   vertical-align: bottom;
-   margin-right: 7px;
-}
-
-.toggle__fake::before {
-   content: '';
-   width: 16px;
-   height: 16px;
-   background-color: #3C3C3C;
-   border-radius: 50%;
-   position: absolute;
-   top: 2px;
-   left: 2px;
-   transition: all 0.3s ease-in;
-}
-
-.toggle__real:checked+.toggle__fake {
-   background-color: #4f77f9;
-}
-
-.toggle__real:checked+.toggle__fake::before {
-   transform: translateX(105%);
-}
-
-.toggle__title {
-   font-size: 16px;
-   line-height: 1.19;
-   color: #3C3C3C;
 }
