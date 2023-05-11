@@ -60,6 +60,27 @@
       <main>
          <h1>Кастомные элементы</h1>
 
+         <section id="modals" class="modals">
+            <div class="modals__container">
+               <h2>Модальные окна</h2>
+               <!-- вариант №1 -->
+               <h3>Простые модальные окна</h3>
+               <button class="modals__btn btn" data-path="form-popup">Окно 1</button>
+               <button class="modals__btn btn" data-path="me-popup">Окно 2</button>
+
+               <div class="modals">
+                  <div class="modal-overlay">
+                     <div class="modal modal--1" data-target="form-popup">
+                        Окно 1
+                     </div>
+                     <div class="modal modal--2" data-target="me-popup">
+                        Окно 2
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
          <section id="tabs" class="tabs">
 
             <div class="tabs__container">

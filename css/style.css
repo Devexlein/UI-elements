@@ -2,6 +2,7 @@
 @import './blocks/base.css';
 
 @import './blocks/header.css';
+@import './blocks/modals.css';
 @import './blocks/tabs.css';
 @import './blocks/buttons.css';
 
