@@ -44,3 +44,19 @@
 .modal--visible {
    display: block;
 }
+
+.modal h4 {
+   margin-bottom: 15px;
+   font-weight: 500;
+   color: darkcyan;
+}
+
+.modal--2 h4 {
+   color: tomato;
+}
+
+.modal ol {
+   padding-left: 15px;
+   font-size: 12px;
+   line-height: 1.7;
+}
