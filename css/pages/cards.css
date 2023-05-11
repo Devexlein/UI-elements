@@ -174,7 +174,7 @@
 }
 
 .card_photo {
-   --img-url: url("/img/bg-1.png");
+   --img-url: url("../../img/bg-1.jpg");
    flex-shrink: 1;
    height: calc(150px + 6vw);
    width: calc(150px + 6vw);

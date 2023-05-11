@@ -636,7 +636,7 @@
 .parallax-slider__bg {
    position: absolute;
    top: 0;
-   background: url('../img/05.png') center / cover no-repeat;
+   background: url('../../img/05.png') center / cover no-repeat;
    width: 140%;
    height: 600px;
 }
