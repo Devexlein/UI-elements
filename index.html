@@ -63,27 +63,57 @@
          <section id="modals" class="modals">
             <div class="modals__container">
                <h2>Модальные окна</h2>
-               <!-- вариант №1 -->
-               <h3>Простые модальные окна</h3>
-               <button class="modals__btn btn" data-path="form-popup">Окно 1</button>
-               <button class="modals__btn btn" data-path="me-popup">Окно 2</button>
+               <div class="form-row">
+                  <!-- вариант №1 -->
+                  <div class="form-column">
+                     <h3>Простые модальные окна</h3>
+                     <button class="modals__btn btn" data-path="form-popup">Окно 1</button>
+                     <button class="modals__btn btn" data-path="me-popup">Окно 2</button>
 
-               <div class="modals">
-                  <div class="modal-overlay">
-                     <div class="modal modal--1" data-target="form-popup">
-                        <h4>Преимущества</h4>
-                        <ol>
-                           <li>Простая реализация</li>
-                           <li>Связываем кнопки с окнами через data-атрибут</li>
-                        </ol>
+                     <div class="modals-box">
+                        <div class="modal-overlay">
+                           <div class="modal-window modal-window--1" data-target="form-popup">
+                              <h4>Преимущества</h4>
+                              <ol>
+                                 <li>Простая реализация</li>
+                                 <li>Связываем кнопки с окнами через data-атрибут</li>
+                              </ol>
+                           </div>
+                           <div class="modal-window modal-window--2" data-target="me-popup">
+                              <h4>Недостатки</h4>
+                              <ol>
+                                 <li>Закрытие только по клику на оверлей</li>
+                                 <li>Не подходит для попапов внутри попапов</li>
+                              </ol>
+                           </div>
+                        </div>
                      </div>
-                     <div class="modal modal--2" data-target="me-popup">
-                        <h4>Недостатки</h4>
-                        <ol>
-                           <li>Закрытие только по клику на оверлей</li>
-                           <li>Не подходит для попапов внутри попапов</li>
-                        </ol>
+                  </div>
+
+                  <!-- вариант №2 -->
+                  <div class="form-column">
+                     <h3>Mодальное окно, закрытие по свайпу (на мобильных)</h3>
+                     <button class="open-btn modal-btn" data-path="form-popup">Открыть форму</button>
+
+                     <div class="modal-box">
+                        <div class="modal">
+                           <button class="modal__close-btn"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 496.096 496.096">
+                                 <path d="M259.41,247.998L493.754,13.654c3.123-3.124,3.123-8.188,0-11.312c-3.124-3.123-8.188-3.123-11.312,0L248.098,236.686
+                              			L13.754,2.342C10.576-0.727,5.512-0.639,2.442,2.539c-2.994,3.1-2.994,8.015,0,11.115l234.344,234.344L2.442,482.342
+                              			c-3.178,3.07-3.266,8.134-0.196,11.312s8.134,3.266,11.312,0.196c0.067-0.064,0.132-0.13,0.196-0.196L248.098,259.31
+                              			l234.344,234.344c3.178,3.07,8.242,2.982,11.312-0.196c2.995-3.1,2.995-8.016,0-11.116L259.41,247.998z" />
+                              </svg></button>
+                           <button class="modal__mobile-close-btn" data-swipe-threshold="20" data-swipe-unit="px" data-swipe-timeout="500" data-swipe-ignore="false">
+
+                           </button>
+                           <form class="modal__form">
+                              <input class="modal__form-input" type="text" name="name" placeholder="Введите имя">
+                              <input class="modal__form-input" type="tel" name="phone" placeholder="Введите телефон">
+                              <button class="modal__form-btn modal-btn" type="submit">Отправить</button>
+                           </form>
+                        </div>
                      </div>
+                     <a href="https://www.youtube.com/watch?v=VoxDjhCqqqE&list=PLCMvV-acWe2ABigEmFMDWCu8gzC0fdgRa&index=5" class="link" target="_blank">Источник: +плагин <b>swiped-events</b></a>
                   </div>
                </div>
             </div>
@@ -551,6 +581,7 @@
       </main>
    </div>
 
+   <script src="./js/swiped-events.min.js"></script>
    <script src="./js/main.js"></script>
 
 

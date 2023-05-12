@@ -72,6 +72,11 @@ h3 {
 
 .form-column {
    flex: 1 1 auto;
+   justify-content: space-evenly;
+}
+
+.form-column>*:not(:last-child) {
+   margin-bottom: 10px;
 }
 
 .form-group-title {
