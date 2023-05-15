@@ -1,11 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:regular,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,regular,500,600,700,800,900&display=swap');
+
 /*  Кнопки */
 .buttons__container .form-column {
    justify-content: space-between;
-   align-items: center;
 }
 
 [class*="-box"] {
    padding: 1rem 1rem;
+}
+
+/* вариант №5 */
+.btn-box3 {
+   --textcolor: #111;
+   --primary: #ffab9d;
+   --primary-half: rgb(255 171 157 / 0.5);
+   font-family: "Fira Sans", sans-serif;
+}
+
+.btn-click {
+   position: relative;
+   display: flex;
+   align-items: center;
+   margin: auto;
+   max-width: 220px;
+   padding: 19px 22px;
+   transition: all .2s ease;
+   color: var(--textcolor);
+}
+
+.btn-click::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   border-radius: 28px;
+   background: var(--primary-half, rgba(255, 171, 157, 0.5));
+   width: 56px;
+   height: 56px;
+   z-index: -1;
+   transition: all .3s ease;
+}
+
+.btn-click span {
+   font-size: 1.5rem;
+   padding: 0.3rem;
+   font-family: "Fira Sans";
+   font-weight: 900;
+   letter-spacing: 0.15em;
+   text-transform: uppercase;
+}
+
+.btn-click svg {
+   margin-left: 10px;
+   position: relative;
+   width: 16px;
+   height: 12px;
+   fill: none;
+   stroke-linecap: round;
+   stroke-linejoin: round;
+   stroke: var(--textcolor);
+   stroke-width: 2.5;
+   transform: translateX(-5px);
+   transition: all .3s ease;
+}
+
+.btn-click:hover::before {
+   width: 100%;
+   background: var(--primary);
+}
+
+.btn-click:hover svg {
+   transform: translateX(0);
+}
+
+.btn-click:active {
+   transform: scale(.96)
 }
 
 /* вариант №4 */
@@ -73,6 +144,9 @@
 .btn-box2 a {
    font-size: 1.5rem;
    padding: 0.5rem 1rem;
+   font-family: "Fira Sans";
+   font-weight: 700;
+   letter-spacing: 0.15em;
    color: #f4f4f4;
    text-transform: uppercase;
 }
