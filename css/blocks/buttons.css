@@ -15,7 +15,6 @@
    --textcolor: #111;
    --primary: #ffab9d;
    --primary-half: rgb(255 171 157 / 0.5);
-   font-family: "Fira Sans", sans-serif;
 }
 
 .btn-click {
@@ -44,6 +43,7 @@
 }
 
 .btn-click span {
+   font-family: "Fira Sans", sans-serif;
    font-size: 1.5rem;
    padding: 0.3rem;
    font-family: "Fira Sans";
@@ -76,7 +76,7 @@
 }
 
 .btn-click:active {
-   transform: scale(.96)
+   transform: scale(0.9);
 }
 
 /* вариант №4 */
