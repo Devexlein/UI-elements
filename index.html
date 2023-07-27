@@ -1,602 +1,712 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Кастомные элементы</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Кастомные элементы</title>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="./css/style.css">
+        <!-- <script src="https://api-maps.yandex.ru/3.0/?apikey=f5366849-3fbc-46d6-9f35-fe6e8d9919c7&lang=ru_RU"></script> -->
+    </head>
 
-   <!-- <script src="https://api-maps.yandex.ru/3.0/?apikey=f5366849-3fbc-46d6-9f35-fe6e8d9919c7&lang=ru_RU"></script> -->
-</head>
-
-<body>
-   <div class="wrapper">
-      <header class="header">
-         <div class="header__container">
-            <a href="#" class="header__logo"></a>
-            <div class="header__menu menu">
-               <div class="menu__icon">
-                  <span></span>
-               </div>
-               <nav class="menu__body">
-                  <ul role='list' class="menu__list">
-                     <li><a data-goto=".tabs" href="#" class="menu__link">Табы</a></li>
-                     <li><a data-goto=".buttons" href="#" class="menu__link">Кнопки</a></li>
-                     <li>
-                        <a href="#" class="menu__link">Элементы формы</a>
-                        <span class="menu__arrow"></span>
-                        <ul role='list' class="menu__sub-list">
-                           <li><a data-goto=".select" href="#" class="menu__sub-link">Выпадающий список</a></li>
-                           <li><a data-goto=".toggle" href="#" class="menu__sub-link">Ползунки</a></li>
-                           <li><a data-goto=".checkbox" href="#" class="menu__sub-link">Чекбоксы</a></li>
-                           <li><a data-goto=".radio" href="#radio" class="menu__sub-link">Радиокнопки</a></li>
-                        </ul>
-                     </li>
-                     <li><a data-goto=".lists-boxes" href="#" class="menu__link">Списки</a></li>
-                     <li><a data-goto=".mapss-boxes" href="#" class="menu__link">Карты</a></li>
-                     <li><a href="./pages/cards.html" target="_blank" class="menu__link">Карточки</a></li>
-                     <li><a href="./pages/galleries.html" target="_blank" class="menu__link">Галерея-макеты</a></li>
-                     <li><a href="./pages/animations.html" target="_blank" class="menu__link">Анимации</a></li>
-                     <li><a class="menu__link" href="./pages/count.html" target="_blank">Обратный отсчет</a></li>
-                     <li>
-                        <a href="./pages/sliders.html" target="_blank" class="menu__link">Слайдеры</a>
-                        <span class="menu__arrow"></span>
-                        <ul role='list' class="menu__sub-list">
-                           <li><a href="#" class="menu__sub-link">Cлайдер-карусель</a></li>
-                           <li><a href="#" class="menu__sub-link">Cлайдер-полароид</a></li>
-                           <li><a href="#" class="menu__sub-link">3D-слайдер (куб)</a></li>
-                           <li><a href="#" class="menu__sub-link">Swiper-slider: Параллакс слайдер</a></li>
-                        </ul>
-                     </li>
-                  </ul>
-               </nav>
-            </div>
-         </div>
-      </header>
-
-      <main>
-         <h1>Кастомные элементы</h1>
-
-         <section id="modals" class="modals">
-            <div class="modals__container">
-               <h2>Модальные окна</h2>
-               <div class="form-row">
-                  <!-- вариант №1 -->
-                  <div class="form-column">
-                     <h3>Простые модальные окна</h3>
-                     <button class="modals__btn btn" data-path="form-popup">Окно 1</button>
-                     <button class="modals__btn btn" data-path="me-popup">Окно 2</button>
-
-                     <div class="modals-box">
-                        <div class="modal-overlay">
-                           <div class="modal-window modal-window--1" data-target="form-popup">
-                              <h4>Преимущества</h4>
-                              <ol>
-                                 <li>Простая реализация</li>
-                                 <li>Связываем кнопки с окнами через data-атрибут</li>
-                              </ol>
-                           </div>
-                           <div class="modal-window modal-window--2" data-target="me-popup">
-                              <h4>Недостатки</h4>
-                              <ol>
-                                 <li>Закрытие только по клику на оверлей</li>
-                                 <li>Не подходит для попапов внутри попапов</li>
-                              </ol>
-                           </div>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <div class="header__container">
+                    <a href="#" class="header__logo"></a>
+                    <div class="header__menu menu">
+                        <div class="menu__icon">
+                            <span></span>
                         </div>
-                     </div>
-                  </div>
+                        <nav class="menu__body">
+                            <ul role="list" class="menu__list">
+                                <li><a data-goto=".tabs" href="#" class="menu__link">Табы</a></li>
+                                <li><a data-goto=".buttons" href="#" class="menu__link">Кнопки</a></li>
+                                <li>
+                                    <a href="#" class="menu__link">Элементы формы</a>
+                                    <span class="menu__arrow"></span>
+                                    <ul role="list" class="menu__sub-list">
+                                        <li><a data-goto=".select" href="#" class="menu__sub-link">Выпадающий список</a></li>
+                                        <li><a data-goto=".toggle" href="#" class="menu__sub-link">Ползунки</a></li>
+                                        <li> <a data-goto=".checkbox" href="#" class="menu__sub-link">Чекбоксы</a></li>
+                                        <li> <a data-goto=".radio" href="#radio" class="menu__sub-link">Радиокнопки</a></li>
+                                    </ul>
+                                </li>
+                                <li><a data-goto=".lists-boxes" href="#" class="menu__link">Списки</a></li>
+                                <li><a data-goto=".mapss-boxes" href="#" class="menu__link">Карты</a></li>
+                                <li><a href="./pages/cards.html" target="_blank" class="menu__link">Карточки</a></li>
+                                <li><a href="./pages/galleries.html" target="_blank" class="menu__link">Галерея-макеты</a></li>
+                                <li><a href="./pages/animations.html" target="_blank" class="menu__link">Анимации</a></li>
+                                <li><a class="menu__link" href="./pages/count.html" target="_blank">Обратный отсчет</a></li>
+                                <li>
+                                    <a href="./pages/sliders.html" target="_blank" class="menu__link">Слайдеры</a>
+                                    <span class="menu__arrow"></span>
+                                    <ul role="list" class="menu__sub-list">
+                                        <li><a href="#" class="menu__sub-link">Cлайдер-карусель</a></li>
+                                        <li><a href="#" class="menu__sub-link">Cлайдер-полароид</a></li>
+                                        <li><a href="#" class="menu__sub-link">3D-слайдер (куб)</a></li>
+                                        <li><a href="#" class="menu__sub-link">Swiper-slider: Параллакс слайдер</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
 
-                  <!-- вариант №2 -->
-                  <div class="form-column">
-                     <h3>Mодальное окно, закрытие по свайпу (на мобильных)</h3>
-                     <button class="open-btn modal-btn" data-path="form-popup">Открыть форму</button>
+            <main>
+                <h1>Кастомные элементы</h1>
 
-                     <div class="modal-box">
-                        <div class="modal">
-                           <button class="modal__close-btn"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 496.096 496.096">
-                                 <path d="M259.41,247.998L493.754,13.654c3.123-3.124,3.123-8.188,0-11.312c-3.124-3.123-8.188-3.123-11.312,0L248.098,236.686
+                <section id="modals" class="modals">
+                    <div class="modals__container">
+                        <h2>Модальные окна</h2>
+                        <div class="form-row">
+
+                            <!-- вариант №3 -->
+                            <div class="form-column">
+                                <h3>Модальные окна (CSS, псевдокласс :target)</h3>
+                                <div  class="form-column__content">
+                                    <div class="form-column__text">
+                                        <p>Модальные окна, их еще называют всплывающие окна или попапы от английского (pop-up) - блоки с версткой находятся перед закрывающимся тегом body. Используем якорные ссылки и анимацию.</p>
+                                        <p>Два варианта работы - открытие<a href="#popup-target" class="popup__link"> с помощью CSS псевдокласса :target</a> и, более мощный, с использованием JavaScript.</p>
+                                    </div>
+                                    <a href="#popup__image" class="form-column__image popup__link">
+                                        <img src="./img/bg-1.jpg" alt="Превью изображения ночного салюта">
+                                    </a>
+                                </div>
+
+                                <a href="https://www.youtube.com/watch?v=qoO1ZNi1LyI" class="link" target="_blank">Источник: Модальные окна(попапы) на HTML CSS JS</a>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <!-- вариант №1 -->
+                            <div class="form-column">
+                                <h3>Простые модальные окна</h3>
+                                <button class="modals__btn btn" data-path="one-popup">Окно 1</button>
+                                <button class="modals__btn btn" data-path="two-popup">Окно 2</button>
+
+                                <div class="modals-box">
+                                    <div class="modal-overlay">
+                                        <div class="modal-window modal-window--1" data-target="one-popup">
+                                            <h4>Преимущества</h4>
+                                            <ol>
+                                                <li>Простая реализация</li>
+                                                <li>Удобно для показа информационных окон</li>
+                                                <li>Связываем кнопки с окнами через data-атрибут</li>
+                                            </ol>
+                                        </div>
+                                        <div class="modal-window modal-window--2" data-target="two-popup">
+                                            <h4>Недостатки</h4>
+                                            <ol>
+                                                <li>Закрытие только по клику на оверлей</li>
+                                                <li>Не подходит для попапов внутри попапов</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=LcHXs4352Ps" class="link" target="_blank">Источник: Попапы на HTML CSS JS</a>
+                            </div>
+
+                            <!-- вариант №2 -->
+                            <div class="form-column">
+                                <h3>Mодальное окно, закрытие по свайпу (на мобильных)</h3>
+                                <button class="open-btn modal-btn" data-path="form-popup">Открыть форму</button>
+
+                                <div class="modal-box">
+                                    <div class="modal">
+                                        <button class="modal__close-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 496.096 496.096">
+                                                <path
+                                                    d="M259.41,247.998L493.754,13.654c3.123-3.124,3.123-8.188,0-11.312c-3.124-3.123-8.188-3.123-11.312,0L248.098,236.686
                               			L13.754,2.342C10.576-0.727,5.512-0.639,2.442,2.539c-2.994,3.1-2.994,8.015,0,11.115l234.344,234.344L2.442,482.342
                               			c-3.178,3.07-3.266,8.134-0.196,11.312s8.134,3.266,11.312,0.196c0.067-0.064,0.132-0.13,0.196-0.196L248.098,259.31
-                              			l234.344,234.344c3.178,3.07,8.242,2.982,11.312-0.196c2.995-3.1,2.995-8.016,0-11.116L259.41,247.998z" />
-                              </svg></button>
-                           <button class="modal__mobile-close-btn" data-swipe-threshold="20" data-swipe-unit="px" data-swipe-timeout="500" data-swipe-ignore="false">
+                              			l234.344,234.344c3.178,3.07,8.242,2.982,11.312-0.196c2.995-3.1,2.995-8.016,0-11.116L259.41,247.998z"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <button class="modal__mobile-close-btn" data-swipe-threshold="20" data-swipe-unit="px" data-swipe-timeout="500" data-swipe-ignore="false"></button>
+                                        <form class="modal__form">
+                                            <input class="modal__form-input" type="text" name="name" placeholder="Введите имя"/>
+                                            <input class="modal__form-input" type="tel" name="phone" placeholder="Введите телефон"/>
+                                            <button class="modal__form-btn modal-btn" type="submit">Отправить</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=VoxDjhCqqqE&list=PLCMvV-acWe2ABigEmFMDWCu8gzC0fdgRa&index=5"
+                                    class="link" target="_blank">Источник: +плагин <b>swiped-events</b></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                           </button>
-                           <form class="modal__form">
-                              <input class="modal__form-input" type="text" name="name" placeholder="Введите имя">
-                              <input class="modal__form-input" type="tel" name="phone" placeholder="Введите телефон">
-                              <button class="modal__form-btn modal-btn" type="submit">Отправить</button>
-                           </form>
+                <section id="tabs" class="tabs">
+                    <div class="tabs__container">
+                        <h2>Табы</h2>
+                        <div class="content-3">
+                            <!-- вариант №3 -->
+                            <h3>CSS (+animation) и JS</h3>
+                            <div class="tabs__box-3">
+                                <div class="tabs__nav">
+                                    <button class="active" type="button">
+                                        Tab Button 1
+                                    </button>
+                                    <button type="button">Tab Button 2</button>
+                                    <button type="button">Tab Button 3</button>
+                                </div>
+                                <div class="tabs__content-item">
+                                    <img
+                                        src="./img/tabs-slide1.jpg"
+                                        alt="Мужчина возле озера"
+                                    />
+                                    <h4>Код и стили</h4>
+                                    <div class="tabs__desc">
+                                        <p>В данном примере количество используемых классов минимизировано,
+                                            стилизация элементов - через селекторы тегов и их комбинации, в
+                                            т.ч. и при обращении к элементам в JS (кнопки для переключения
+                                            содержимого).
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tabs__content-item">
+                                    <img src="./img/tabs-slide2.jpg" alt="Фото ночной дороги"/>
+                                    <h4>Неразрывный пробел</h4>
+                                    <div class="tabs__desc">
+                                        <p>Один из способов избежать нежелательного переноса на отдельную
+                                            строку коротких слов, предлогов - использовать вместо пробела - символ
+                                            "неразрывного&nbsp;пробела":&nbsp;<span> nbsp</span>.</p>
+                                    </div>
+                                </div>
+                                <div class="tabs__content-item">
+                                    <img src="./img/tabs-slide3.jpg" alt="Фото велосипеда у стены"/>
+                                    <h4>"Эффекты"</h4>
+                                    <div class="tabs__desc">
+                                        <p>К переключению табов добавлена
+                                            анимация плавного проявления, в
+                                            частности изменение значения
+                                            свойства opacity от 0,3 до 1.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                     <a href="https://www.youtube.com/watch?v=VoxDjhCqqqE&list=PLCMvV-acWe2ABigEmFMDWCu8gzC0fdgRa&index=5" class="link" target="_blank">Источник: +плагин <b>swiped-events</b></a>
-                  </div>
-               </div>
-            </div>
-         </section>
 
-         <section id="tabs" class="tabs">
-            <div class="tabs__container">
-               <h2>Табы</h2>
-               <div class="content-3">
-                  <!-- вариант №3 -->
-                  <h3>CSS (+animation) и JS</h3>
-                  <div class="tabs__box-3">
-                     <div class="tabs__nav">
-                        <button class="active" type="button">Tab Button 1</button>
-                        <button type="button">Tab Button 2</button>
-                        <button type="button">Tab Button 3</button>
-                     </div>
-                     <div class="tabs__content-item">
-                        <img src="./img/tabs-slide1.jpg" alt="Мужчина возле озера">
-                        <h4>Код и стили</h4>
-                        <div class="tabs__desc">
-                           <p>В данном примере количество используемых классов минимизировано, стилизация элементов -
-                              через селекторы тегов и их комбинации, в т.ч. и при обращении
-                              к элементам в JS (кнопки для переключения содержимого).</p>
+                        <div class="form-row">
+                            <!-- вариант №2 -->
+                            <div class="form-column">
+                                <h3>CSS и JS</h3>
+                                <div class="content-2">
+                                    <div class="tabs__row">
+                                        <ul role="list" class="tabs__list">
+                                            <li class="tabs__link">
+                                                <button class="tabs__btn tabs__btn_active" data-tabs-path="main">Главная</button>
+                                            </li>
+                                            <li class="tabs__link">
+                                                <button class="tabs__btn" data-tabs-path="archive">Архив</button>
+                                            </li>
+                                            <li class="tabs__link">
+                                                <button class="tabs__btn" data-tabs-path="settings">Настройки</button>
+                                            </li>
+                                        </ul>
+                                        <div class="tabs__box tabs__box_active" data-tabs-target="main">
+                                            <div class="tabs__box-content">
+                                                <h4 class="tabs__box-title">Добро пожаловать!</h4>
+                                                <p class="tabs__box-description">
+                                                    Здесь находятся все ваши активные заказы.
+                                                </p>
+                                                <ul role="list" class="tabs__box-list">
+                                                    <li class="tabs__box-item">
+                                                        <a href="#" class="tabs__box-link"
+                                                            style="background-image: url('./img/01.png');">
+                                                            <span class="tabs__box-text">Занятия йогой</span></a>
+                                                    </li>
+                                                    <li class="tabs__box-item">
+                                                        <a href="#" class="tabs__box-link" style="background-image: url('./img/02.png');">
+                                                                <span class="tabs__box-text">Кардио</span></a>
+                                                    </li>
+                                                    <li class="tabs__box-item">
+                                                        <a href="#" class="tabs__box-link" style="
+                                                                background-image: url('./img/03.png');">
+                                                                <span class="tabs__box-text">Силовые тренировки</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="tabs__box" data-tabs-target="archive">
+                                            <div class="tabs__box-content">
+                                                <span>Архив.</span> Lorem ipsum
+                                                dolor sit amet consectetur adipisicing elit.
+                                            </div>
+                                        </div>
+                                        <div class="tabs__box" data-tabs-target="settings">
+                                            <div class="tabs__box-content">
+                                                <span>Настройки.</span>
+                                                Lorem ipsum dolor sit amet
+                                            </div>
+                                        </div>
+                                        <button class="tabs__arrow tabs__arrow_prev" aria-lebel="Назад">
+                                            <svg width="21" height="12" viewBox="0 0 21 12" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.469669 6.53033C0.176777 6.23744 0.176777 5.76256 0.469669 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.469669 6.53033ZM21 6.75H1V5.25H21V6.75Z"/>
+                                            </svg>
+                                        </button>
+                                        <button class="tabs__arrow tabs__arrow_next" aria-lebel="Вперед">
+                                            <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.5303 6.53033C20.8232 6.23744 20.8232 5.76256 20.5303 5.46967L15.7574 0.696699C15.4645 0.403806 14.9896 0.403806 14.6967 0.696699C14.4038 0.989593 14.4038 1.46447 14.6967 1.75736L18.9393 6L14.6967 10.2426C14.4038 10.5355 14.4038 11.0104 14.6967 11.3033C14.9896 11.5962 15.4645 11.5962 15.7574 11.3033L20.5303 6.53033ZM0 6.75H20V5.25H0V6.75Z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=Conc66sfrho" class="link">Источник</a>
+                            </div>
                         </div>
-                     </div>
-                     <div class="tabs__content-item">
-                        <img src="./img/tabs-slide2.jpg" alt="Фото ночной дороги">
-                        <h4>Неразрывный пробел</h4>
-                        <div class="tabs__desc">
-                           <p>Один из способов избежать нежелательного переноса на отдельную строку коротких слов,
-                              предлогов - использовать вместо пробела - символ "неразрывного&nbsp;пробела":&nbsp;<span>
-                                 nbsp</span>.
-                           </p>
-                        </div>
-                     </div>
-                     <div class="tabs__content-item">
-                        <img src="./img/tabs-slide3.jpg" alt="Фото велосипеда у стены">
-                        <h4>"Эффекты"</h4>
-                        <div class="tabs__desc">
-                           <p>К переключению табов добавлена анимация плавного проявления, в частности изменение
-                              значения свойства opacity от 0,3 до 1.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
 
-               <div class="form-row">
-                  <!-- вариант №2 -->
-                  <div class="form-column">
-                     <h3>CSS и JS</h3>
-                     <div class="content-2">
-                        <div class="tabs__row">
-                           <ul role='list' class="tabs__list">
-                              <li class="tabs__link"><button class="tabs__btn tabs__btn_active" data-tabs-path="main">Главная</button></li>
-                              <li class="tabs__link"><button class="tabs__btn" data-tabs-path="archive">Архив</button>
-                              </li>
-                              <li class="tabs__link"><button class="tabs__btn" data-tabs-path="settings">Настройки</button>
-                              </li>
-                           </ul>
-                           <div class="tabs__box tabs__box_active" data-tabs-target="main">
-                              <div class="tabs__box-content">
-                                 <h4 class="tabs__box-title">Добро пожаловать!</h4>
-                                 <p class="tabs__box-description">Здесь находятся все ваши активные заказы.</p>
-                                 <ul role='list' class="tabs__box-list">
-                                    <li class="tabs__box-item">
-                                       <a href="#" class="tabs__box-link" style="background-image: url('./img/01.png')"><span class="tabs__box-text">Занятия йогой</span></a>
+                        <div class="form-row">
+                            <!-- вариант №1 -->
+                            <div class="form-column">
+                                <h3>Только CSS</h3>
+                                <div class="content-1">
+                                    <div class="tabs__row">
+                                        <nav class="tabs__items">
+                                            <a href="#tab_01" class="tabs__item"><span>Первая вкладка</span></a>
+                                            <a href="#tab_02" class="tabs__item"><span>Вторая вкладка</span></a>
+                                            <a href="#tab_03" class="tabs__item"><span>Третья вкладка</span></a>
+                                        </nav>
+                                        <div class="tabs__body">
+                                            <div class="tabs__block" id="tab_01">
+                                                <span>Первая вкладка.</span>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem
+                                                eveniet blanditiis aliquam pariatur quibusdam fugit
+                                                corrupti provident est mollitia reiciendis possimus expedita reprehenderit.
+                                            </div>
+                                            <div class="tabs__block" id="tab_02">
+                                                <span>Вторая вкладка.</span>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem
+                                                eveniet blanditiis aliquam pariatur quibusdam fugit
+                                                corrupti provident est mollitia reiciendis possimus expedita ,
+                                                saepe autem eveniet blanditiis aliquam pariatur quibusdam fugit
+                                                corrupti provident est mollitia reiciendis possimus expedita reprehenderit.
+                                            </div>
+                                            <div class="tabs__block" id="tab_03">
+                                                <span>Третья вкладка.</span>
+                                                Lorem ipsum dolor sit ametconsectetur adipisicing elit.
+                                                Dicta quisquam fuga ipsum quaerat, adipisci, saepe autem
+                                                eveniet blanditiis aliquam pariatur quibusdam fugit
+                                                corrupti provident est mollitia reiciendis possimus expedita reprehenderit.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=5Bh6-xl9FMM"
+                                    class="link">Источник:<span class="link_disadvantage">
+                                        проблема резкого поднятия к верхнему краю, при загрузке страницы требуется
+                                        открытие активной вкладки (можно по хешу)</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="buttons" class="buttons">
+                    <div class="buttons__container">
+                        <h2>Кнопки</h2>
+                        <div class="form-row">
+                            <!-- вариант №1 -->
+                            <div class="form-column">
+                                <div class="btn-box">
+                                    <a href="#" class="btn">Hover to Shine</a>
+                                </div>
+                            </div>
+
+                            <!-- вариант №2 -->
+                            <div class="form-column form-column_btn">
+                                <div class="btn-box1">
+                                    <a href="#" class="btn1"><span>PAO</span></a>
+                                </div>
+                            </div>
+
+                            <!-- вариант №3 -->
+                            <div class="form-column">
+                                <div class="btn-box2">
+                                    <a href="#" class="btn2 btn2_hover">Hover me</a>
+                                </div>
+                            </div>
+
+                            <!-- вариант №4 -->
+                            <div class="form-column">
+                                <div class="btn-box">
+                                    <button class="btn-gradient">Magic Rainbow</button>
+                                </div>
+                            </div>
+
+                            <!-- вариант №5 -->
+                            <div class="form-column">
+                                <div class="btn-box3">
+                                    <a href="#buttons" class="btn-click">
+                                        <span>click me</span>
+                                        <svg viewBox="0 0 13 10">
+                                            <path d="M1,5 L11,5"></path>
+                                            <polyline points="8 1 12 5 8 9"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="inputs" class="inputs">
+                    <div class="inputs__container">
+                        <h2>Поля формы. Input</h2>
+                        <div class="form-row">
+                            <!-- вариант №1 -->
+                            <div class="form-column">
+                                <div class="form-input">
+                                    <input class="content-name" type="text" name="name1" required autocomplete="off"/>
+                                    <label for="name1">
+                                        <span class="label-name">Name</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- вариант №2 -->
+                            <div class="form-column">
+                                <div class="input-box">
+                                    <div class="input-group">
+                                        <input type="text" id="name2" placeholder=" "/>
+                                        <label for="name2">username</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="selects" class="selects">
+                    <div class="selects__container">
+                        <h2>Select. Выпадающий список</h2>
+                        <div class="form-row">
+                            <!-- вариант №1 -->
+                            <div class="form-column">
+                                <h3>Только CSS</h3>
+                                <div class="form-group-title">
+                                    Выберите категорию:
+                                </div>
+                                <div class="form-group">
+                                    <div class="select-wrapper">
+                                        <select name="select-category" class="select">
+                                            <option value="1">Заметки путешественника</option>
+                                            <option value="2">Заметки программиста</option>
+                                            <option value="3">Конспекты по учебе</option>
+                                            <option value="4">Фотоальбом</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- вариант №2 -->
+                            <div class="form-column">
+                                <h3>CSS и JS</h3>
+                                <div class="form-group-title">
+                                    Выберите категорию:
+                                </div>
+                                <div class="form-group">
+                                    <div class="dropdown">
+                                        <button class="dropdown__button">Заметки путешественника</button>
+                                        <ul class="dropdown__list">
+                                            <li class="dropdown__list-item" data-value="travel">
+                                                Заметки путешественника
+                                            </li>
+                                            <li class="dropdown__list-item" data-value="codding">
+                                                Заметки программиста
+                                            </li>
+                                            <li class="dropdown__list-item" data-value="lessons">
+                                                Конспекты по учебе
+                                            </li>
+                                            <li class="dropdown__list-item" data-value="photo">
+                                                Фотоальбом
+                                            </li>
+                                        </ul>
+                                        <input type="text" name="select-category" value="" class="dropdown__input-hidden"/>
+                                    </div>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=JLm_bt9NwjM&list=PL1NBhQGGj46ZE7xn7z8363MAKHnac-TrC&index=4"
+                                    class="link">Источник: Webcademy</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="toggles" class="toggles">
+                    <div class="toggles__container">
+                        <h2>Ползунки</h2>
+                        <div class="form-row">
+                            <!-- вариант 1 -->
+                            <div class="form-column">
+                                <label class="toggle_1">
+                                    <input type="checkbox" class="toggle__real"/>
+                                    <div class="toggle__div"></div>
+                                </label>
+                            </div>
+
+                            <!-- вариант 2 -->
+                            <div class="form-column">
+                                <!-- <div class="widget__body"> -->
+                                <label class="toggle_2">
+                                    <input type="checkbox" class="toggle__real" name="comission"/>
+                                    <span class="toggle__fake"></span>
+                                    <span class="toggle__title">Услуги 0%</span>
+                                </label>
+                                <!-- </div> -->
+                            </div>
+
+                            <!-- вариант 3 -->
+                            <div class="form-column form-column--realy">
+                                <input class="toggle__realy" type="checkbox" name=""/>
+                                <a href="https://www.youtube.com/watch?v=z3TgmTi42ic"
+                                    class="link" target="_blank">Источник</a>
+                            </div>
+
+                            <!-- вариант 4 -->
+                            <div class="form-column">
+                                <label class="toggle__realy-label">
+                                    <input class="toggle__realy-input" type="checkbox" name=""/>
+                                    <div class="toggle__realy-icon">
+                                        <div class="toggle__realy-shadow"></div>
+                                        <div class="toggle__realy-iconbox">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </label>
+                                <a href="https://www.youtube.com/watch?v=IoROPvDgxkc" class="link" target="_blank">Источник</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="checkboxes" class="checkboxes">
+                    <div class="checkboxes__container">
+                        <h2>Чекбоксы</h2>
+                        <div class="form-row">
+                            <div class="form-column">
+                                <div class="form-group-title">
+                                    Выберите категорию:
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="coding-notes" class="real-checkbox"/>
+                                        <span class="custom-checkbox"></span>
+                                        Заметки программиста
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="travel-notes" class="real-checkbox"/>
+                                        <span class="custom-checkbox"></span>
+                                        Заметки путешественника
+                                    </label>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=EotjsvTobso" class="link" target="_blank">Источник</a>
+                            </div>
+                            <div class="form-column">
+                                <div class="form-group-title">Графика svg</div>
+                                <div class="form-group">
+                                    <label class="check">
+                                        <input class="check__input" type="checkbox" name="north"/>
+                                        <span class="check__box"></span>
+                                        Север
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="check">
+                                        <input class="check__input" type="checkbox" name="east" checked/>
+                                        <span class="check__box"></span>
+                                        Восток
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="check">
+                                        <input class="check__input" type="checkbox" name="south" disabled/>
+                                        <span class="check__box"></span>
+                                        Юг
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="check">
+                                        <input class="check__input" type="checkbox" name="west" checked disabled/>
+                                        <span class="check__box"></span>
+                                        Запад
+                                    </label>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=E6kLaaQFctU" class="link" target="_blank">Источник</a>
+                            </div>
+                            <div class="form-column">
+                                <div class="form-group-title">Стили</div>
+                                <div class="form-group">
+                                    <label class="check-1">
+                                        <input class="check__input-1" type="checkbox" name="north"/>
+                                        <span class="check__box-1"></span>
+                                        Север
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="check-1">
+                                        <input class="check__input-1" type="checkbox" name="east" checked/>
+                                        <span class="check__box-1"></span>
+                                        Восток
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="check-1">
+                                        <input class="check__input-1" type="checkbox" name="south" disabled/>
+                                        <span class="check__box-1"></span>
+                                        Юг
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="check-1">
+                                        <input class="check__input-1" type="checkbox" name="west" checked disabled/>
+                                        <span class="check__box-1"></span>
+                                        Запад
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="radio-boxes" class="radio-boxes">
+                    <div class="radio-boxes__container">
+                        <h2>Радиокнопки</h2>
+                        <div class="form-row">
+                            <div class="form-column">
+                                <div class="form-group-title">Выберите категорию:</div>
+                                <div class="form-group">
+                                    <input type="radio" id="cat-coding" name="category" value="coding-notes" class="real-radio"/>
+                                    <span class="custom-radio"></span>
+                                    <label for="cat-coding">Заметки программиста</label>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="radio" name="category" value="travel-notes" class="real-radio"/>
+                                        <span class="custom-radio"></span>
+                                        Заметки путешественника
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="lists-boxes" class="lists-boxes">
+                    <div class="lists-boxes__container">
+                        <h2>Стилизация нумерованных списков</h2>
+                        <div class="form-row">
+                            <div class="form-column">
+                                <ol class="list">
+                                    <li class="list__item">One - first</li>
+                                    <li class="list__item">Two - second</li>
+                                    <li class="list__item">Three - third</li>
+                                    <li class="list__item">Four - fourth</li>
+                                    <li class="list__item">Five - fifth</li>
+                                </ol>
+                            </div>
+                            <div class="form-column">
+                                <ol class="list-inner">
+                                    <li class="list-inner__item">Six - sixth</li>
+                                    <li class="list-inner__item">Seven - seventh
+                                        <ol class="list-inner">
+                                            <li class="list-inner__item">Nine - ninth</li>
+                                            <li class="list-inner__item">Ten - tenth
+                                                <ol class="list-inner">
+                                                    <li class="list-inner__item">Eleven - eleventh</li>
+                                                    <li class="list-inner__item">Twelve - twelfth</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
                                     </li>
-                                    <li class="tabs__box-item">
-                                       <a href="#" class="tabs__box-link" style="background-image: url('./img/02.png')"><span class="tabs__box-text">Кардио</span></a>
-                                    </li>
-                                    <li class="tabs__box-item">
-                                       <a href="#" class="tabs__box-link" style="background-image: url('./img/03.png')"><span class="tabs__box-text">Силовые тренировки</span></a>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                           <div class="tabs__box" data-tabs-target="archive">
-                              <div class="tabs__box-content"><span>Архив.</span> Lorem ipsum dolor sit amet
-                                 consectetur adipisicing elit.
-                              </div>
-                           </div>
-                           <div class="tabs__box" data-tabs-target="settings">
-                              <div class="tabs__box-content"><span>Настройки.</span> Lorem ipsum dolor sit amet
-                              </div>
-                           </div>
-                           <button class="tabs__arrow tabs__arrow_prev" aria-lebel="Назад">
-                              <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.469669 6.53033C0.176777 6.23744 0.176777 5.76256 0.469669 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.469669 6.53033ZM21 6.75H1V5.25H21V6.75Z" />
-                              </svg>
-                           </button>
-                           <button class="tabs__arrow tabs__arrow_next" aria-lebel="Вперед">
-                              <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M20.5303 6.53033C20.8232 6.23744 20.8232 5.76256 20.5303 5.46967L15.7574 0.696699C15.4645 0.403806 14.9896 0.403806 14.6967 0.696699C14.4038 0.989593 14.4038 1.46447 14.6967 1.75736L18.9393 6L14.6967 10.2426C14.4038 10.5355 14.4038 11.0104 14.6967 11.3033C14.9896 11.5962 15.4645 11.5962 15.7574 11.3033L20.5303 6.53033ZM0 6.75H20V5.25H0V6.75Z" />
-                              </svg>
-                           </button>
+                                    <li class="list-inner__item">Eight - eighth</li>
+                                </ol>
+                            </div>
                         </div>
-                     </div>
-                     <a href="https://www.youtube.com/watch?v=Conc66sfrho" class="link">Источник</a>
-                  </div>
-               </div>
+                    </div>
+                </section>
 
-               <div class="form-row">
-                  <!-- вариант №1 -->
-                  <div class="form-column">
-                     <h3>Только CSS</h3>
-                     <div class="content-1">
-                        <div class="tabs__row">
-                           <nav class="tabs__items">
-                              <a href="#tab_01" class="tabs__item"><span>Первая вкладка</span></a>
-                              <a href="#tab_02" class="tabs__item"><span>Вторая вкладка</span></a>
-                              <a href="#tab_03" class="tabs__item"><span>Третья вкладка</span></a>
-                           </nav>
-                           <div class="tabs__body">
-                              <div class="tabs__block" id="tab_01"><span>Первая вкладка.</span> Lorem ipsum dolor sit
-                                 amet consectetur adipisicing elit. Dicta quisquam fuga ipsum quaerat, adipisci, saepe
-                                 autem eveniet blanditiis aliquam
-                                 pariatur quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
-                                 reprehenderit.
-                              </div>
-                              <div class="tabs__block" id="tab_02"><span>Вторая вкладка.</span> Lorem ipsum dolor sit
-                                 amet consectetur adipisicing elit. Dicta quisquam fuga ipsum quaerat, adipisci, saepe
-                                 autem eveniet blanditiis aliquam
-                                 pariatur quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita ,
-                                 saepe
-                                 autem eveniet blanditiis aliquam pariatur quibusdam fugit corrupti provident est
-                                 mollitia reiciendis possimus expedita
-                                 reprehenderit.
-                              </div>
-                              <div class="tabs__block" id="tab_03"><span>Третья вкладка.</span> Lorem ipsum dolor sit
-                                 amet consectetur adipisicing elit. Dicta quisquam fuga ipsum quaerat, adipisci, saepe
-                                 autem eveniet blanditiis aliquam
-                                 pariatur quibusdam fugit corrupti provident est mollitia reiciendis possimus expedita
-                                 reprehenderit.
-                              </div>
-                           </div>
+                <section id="maps-boxes" class="maps-boxes">
+                    <div class="maps-boxes__container">
+                        <h2>Подключение и стилизация карт</h2>
+                        <div class="form-row">
+                            <div class="yandex-map">
+                                <h3>Бесплатная версия API Яндекс Карты (3.0)</h3>
+                                <div id="map" class="map"></div>
+                            </div>
                         </div>
-                     </div>
-                     <a href="https://www.youtube.com/watch?v=5Bh6-xl9FMM" class="link">Источник:
-                        <span class="link_disadvantage">
-                           проблема резкого поднятия к верхнему краю, при загрузке страницы требуется открытие активной
-                           вкладки (можно по хешу)
-                        </span></a>
-                  </div>
-               </div>
-            </div>
-         </section>
+                    </div>
+                </section>
+            </main>
+        </div>
 
-         <section id="buttons" class="buttons">
-            <div class="buttons__container">
-               <h2>Кнопки</h2>
-               <div class="form-row">
-                  <!-- вариант №1 -->
-                  <div class="form-column">
-                     <div class="btn-box">
-                        <a href="#" class="btn">Hover to Shine</a>
-                     </div>
-                  </div>
-
-                  <!-- вариант №2 -->
-                  <div class="form-column form-column_btn">
-                     <div class="btn-box1">
-                        <a href="#" class="btn1"><span>PAO</span></a>
-                     </div>
-                  </div>
-
-                  <!-- вариант №3 -->
-                  <div class="form-column">
-                     <div class="btn-box2">
-                        <a href="#" class="btn2 btn2_hover">Hover me</a>
-                     </div>
-                  </div>
-
-                  <!-- вариант №4 -->
-                  <div class="form-column">
-                     <div class="btn-box">
-                        <button class="btn-gradient">Magic Rainbow</button>
-                     </div>
-                  </div>
-
-                  <!-- вариант №5 -->
-                  <div class="form-column">
-                     <div class="btn-box3">
-                        <a href="#buttons" class="btn-click">
-                           <span>click me</span>
-                           <svg viewBox="0 0 13 10">
-                              <path d="M1,5 L11,5"></path>
-                              <polyline points="8 1 12 5 8 9"></polyline>
-                           </svg>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-
-            </div>
-         </section>
-
-         <section id="inputs" class="inputs">
-            <div class="inputs__container">
-               <h2>Поля формы. Input</h2>
-               <div class="form-row">
-                  <!-- вариант №1 -->
-                  <div class="form-column">
-                     <div class="form-input">
-                        <input class="content-name" type="text" name="name1" required autocomplete="off" />
-                        <label for="name1">
-                           <span class="label-name">
-                              Name
-                           </span>
-                        </label>
-                     </div>
-                  </div>
-
-                  <!-- вариант №2 -->
-                  <div class="form-column">
-                     <div class="input-box">
-                        <div class="input-group">
-                           <input type="text" id="name2" placeholder=" " />
-                           <label for="name2">username</label>
+        <div id="popup-target" class="popup">
+            <!-- элемент нужет только при использовании псевдокласса :target -->
+            <a href="#" class="popup__area"></a>
+            <div class="popup__body">
+                <div class="popup__content">
+                    <!-- при использовании псевдокласса :target button не подойдет - для закрытия окна нужен href -->
+                    <a href="#" class="popup__close">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 496.096 496.096">
+                            <path d="M259.41,247.998L493.754,13.654c3.123-3.124,3.123-8.188,0-11.312c-3.124-3.123-8.188-3.123-11.312,0L248.098,236.686
+                    L13.754,2.342C10.576-0.727,5.512-0.639,2.442,2.539c-2.994,3.1-2.994,8.015,0,11.115l234.344,234.344L2.442,482.342
+                    c-3.178,3.07-3.266,8.134-0.196,11.312s8.134,3.266,11.312,0.196c0.067-0.064,0.132-0.13,0.196-0.196L248.098,259.31
+                    l234.344,234.344c3.178,3.07,8.242,2.982,11.312-0.196c2.995-3.1,2.995-8.016,0-11.116L259.41,247.998z"/>
+                        </svg>
+                    </a>
+                    <h3 class="popup__title">Попап открыт с помощью CSS псевдокласса :target</h3>
+                    <div class="popup__text">
+                        <div class="popup__wrap-text">
+                            <h4  class="popup__subtitle popup__subtitle--advantages">Преимущества</h4>
+                            <ol class="popup__list">
+                                <li>Простая реализация, только HTML и CSS</li>
+                                <li>Удобно для показа информационных окон</li>
+                            </ol>
                         </div>
-                     </div>
-                  </div>
-
-               </div>
+                        <div class="popup__wrap-text">
+                            <h4  class="popup__subtitle popup__subtitle--disadvantages">Недостатки</h4>
+                            <ol class="popup__list">
+                                <li>При закрытии окна происходит скачок к началу страницы <span>(решение: сделать объект, н-р, шапка с меню, либо добавить невидимый объект, фиксированным, и ссылку указать на них)</span></li>
+                                <li>Нельзя закрыть при клике на оверлей <span>(решение: создать дополнительную ссылку (popup__area), родителем которой будет попап)</span></li>
+                                <li>В адресной строке сохраняется хеш</li>
+                                <li>Нельзя зафиксировать контент под областью попапа и оверлея</li>
+                                <li>Нельзя скрыть боковой скрол (при переполнении содержимого) и убрать скачок в сторону</li>
+                            </ol>
+                        </div>                    
+                    </div>
+                </div>
             </div>
-         </section>
+        </div>
 
-         <section id="selects" class="selects">
-            <div class="selects__container">
-               <h2>Select. Выпадающий список</h2>
-               <div class="form-row">
-                  <!-- вариант №1 -->
-                  <div class="form-column">
-                     <h3>Только CSS</h3>
-                     <div class="form-group-title">Выберите категорию:</div>
-                     <div class="form-group">
-                        <div class="select-wrapper">
-                           <select name="select-category" class="select">
-                              <option value="1">Заметки путешественника</option>
-                              <option value="2">Заметки программиста</option>
-                              <option value="3">Конспекты по учебе</option>
-                              <option value="4">Фотоальбом</option>
-                           </select>
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- вариант №2 -->
-                  <div class="form-column">
-                     <h3>CSS и JS</h3>
-                     <div class="form-group-title">Выберите категорию:</div>
-                     <div class="form-group">
-                        <div class="dropdown">
-                           <button class="dropdown__button">Заметки путешественника</button>
-                           <ul class="dropdown__list">
-                              <li class="dropdown__list-item" data-value="travel">Заметки путешественника</li>
-                              <li class="dropdown__list-item" data-value="codding">Заметки программиста</li>
-                              <li class="dropdown__list-item" data-value="lessons">Конспекты по учебе</li>
-                              <li class="dropdown__list-item" data-value="photo">Фотоальбом</li>
-                           </ul>
-                           <input type="text" name="select-category" value="" class="dropdown__input-hidden">
-                        </div>
-                     </div>
-                     <a href="https://www.youtube.com/watch?v=JLm_bt9NwjM&list=PL1NBhQGGj46ZE7xn7z8363MAKHnac-TrC&index=4" class="link">Источник: Webcademy</a>
-                  </div>
-               </div>
+        <!-- <div class="modals-box">
+            <div class="modal-overlay">
+                <div class="modal-window modal-window--1" data-target="one-popup">
+                    
+                </div>
+                <div class="modal-window modal-window--2" data-target="two-popup">
+                    <h4>Недостатки</h4>
+                    <ol>
+                        <li>Закрытие только по клику на оверлей</li>
+                        <li>Не подходит для попапов внутри попапов</li>
+                    </ol>
+                </div>
             </div>
-         </section>
+        </div> -->
 
-         <section id="toggles" class="toggles">
-            <div class="toggles__container">
-               <h2>Ползунки</h2>
-               <div class="form-row">
-                  <!-- вариант 1 -->
-                  <div class="form-column">
-                     <label class="toggle_1">
-                        <input type="checkbox" class="toggle__real">
-                        <div class="toggle__div"></div>
-                     </label>
-                  </div>
-
-                  <!-- вариант 2 -->
-                  <div class="form-column">
-                     <!-- <div class="widget__body"> -->
-                     <label class="toggle_2">
-                        <input type="checkbox" class="toggle__real" name="comission">
-                        <span class="toggle__fake"></span>
-                        <span class="toggle__title">Услуги 0%</span>
-                     </label>
-                     <!-- </div> -->
-                  </div>
-
-                  <!-- вариант 3 -->
-                  <div class="form-column form-column--realy">
-                     <input class="toggle__realy" type="checkbox" name="">
-                     <a href="https://www.youtube.com/watch?v=z3TgmTi42ic" class="link" target="_blank">Источник</a>
-                  </div>
-
-                  <!-- вариант 4 -->
-                  <div class="form-column">
-                     <label class="toggle__realy-label">
-                        <input class="toggle__realy-input" type="checkbox" name="">
-                        <div class="toggle__realy-icon">
-                           <div class="toggle__realy-shadow"></div>
-                           <div class="toggle__realy-iconbox">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                 <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z" />
-                              </svg>
-                           </div>
-                        </div>
-                     </label>
-                     <a href="https://www.youtube.com/watch?v=IoROPvDgxkc" class="link" target="_blank">Источник</a>
-                  </div>
-
-               </div>
-            </div>
-         </section>
-
-         <section id="checkboxes" class="checkboxes">
-            <div class="checkboxes__container">
-               <h2>Чекбоксы</h2>
-               <div class="form-row">
-                  <div class="form-column">
-                     <div class="form-group-title">Выберите категорию:</div>
-                     <div class="form-group">
-                        <label>
-                           <input type="checkbox" name="coding-notes" class="real-checkbox">
-                           <span class="custom-checkbox"></span>
-                           Заметки программиста
-                        </label>
-                     </div>
-                     <div class="form-group">
-                        <label>
-                           <input type="checkbox" name="travel-notes" class="real-checkbox">
-                           <span class="custom-checkbox"></span>
-                           Заметки путешественника
-                        </label>
-                     </div>
-                     <a href="https://www.youtube.com/watch?v=EotjsvTobso" class="link" target="_blank">Источник</a>
-                  </div>
-                  <div class="form-column">
-                     <div class="form-group-title">Графика svg</div>
-                     <div class="form-group">
-                        <label class="check">
-                           <input class="check__input" type="checkbox" name="north">
-                           <span class="check__box"></span>
-                           Север
-                        </label>
-                     </div>
-                     <div class="form-group">
-                        <label class="check">
-                           <input class="check__input" type="checkbox" name="east" checked>
-                           <span class="check__box"></span>
-                           Восток
-                        </label>
-                     </div>
-                     <div class="form-group">
-                        <label class="check">
-                           <input class="check__input" type="checkbox" name="south" disabled>
-                           <span class="check__box"></span>
-                           Юг
-                        </label>
-                     </div>
-                     <div class="form-group">
-                        <label class="check">
-                           <input class="check__input" type="checkbox" name="west" checked disabled>
-                           <span class="check__box"></span>
-                           Запад
-                        </label>
-                     </div>
-                     <a href="https://www.youtube.com/watch?v=E6kLaaQFctU" class="link" target="_blank">Источник</a>
-                  </div>
-                  <div class="form-column">
-                     <div class="form-group-title">Стили</div>
-                     <div class="form-group">
-                        <label class="check-1">
-                           <input class="check__input-1" type="checkbox" name="north">
-                           <span class="check__box-1"></span>
-                           Север
-                        </label>
-                     </div>
-                     <div class="form-group">
-                        <label class="check-1">
-                           <input class="check__input-1" type="checkbox" name="east" checked>
-                           <span class="check__box-1"></span>
-                           Восток
-                        </label>
-                     </div>
-                     <div class="form-group">
-                        <label class="check-1">
-                           <input class="check__input-1" type="checkbox" name="south" disabled>
-                           <span class="check__box-1"></span>
-                           Юг
-                        </label>
-                     </div>
-                     <div class="form-group">
-                        <label class="check-1">
-                           <input class="check__input-1" type="checkbox" name="west" checked disabled>
-                           <span class="check__box-1"></span>
-                           Запад
-                        </label>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <section id="radio-boxes" class="radio-boxes">
-            <div class="radio-boxes__container">
-               <h2>Радиокнопки</h2>
-               <div class="form-row">
-                  <div class="form-column">
-                     <div class="form-group-title">Выберите категорию:</div>
-                     <div class="form-group">
-                        <input type="radio" id="cat-coding" name="category" value="coding-notes" class="real-radio">
-                        <span class="custom-radio"></span>
-                        <label for="cat-coding">Заметки программиста</label>
-                     </div>
-                     <div class="form-group">
-                        <label>
-                           <input type="radio" name="category" value="travel-notes" class="real-radio">
-                           <span class="custom-radio"></span>
-                           Заметки путешественника
-                        </label>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <section id="lists-boxes" class="lists-boxes">
-            <div class="lists-boxes__container">
-               <h2>Стилизация нумерованных списков</h2>
-               <div class="form-row">
-                  <div class="form-column">
-                     <ol class="list">
-                        <li class="list__item">One - first</li>
-                        <li class="list__item">Two - second</li>
-                        <li class="list__item">Three - third</li>
-                        <li class="list__item">Four - fourth</li>
-                        <li class="list__item">Five - fifth</li>
-                     </ol>
-                  </div>
-                  <div class="form-column">
-                     <ol class="list-inner">
-                        <li class="list-inner__item">Six - sixth</li>
-                        <li class="list-inner__item">Seven - seventh
-                           <ol class="list-inner">
-                              <li class="list-inner__item">Nine - ninth</li>
-                              <li class="list-inner__item">Ten - tenth
-                                 <ol class="list-inner">
-                                    <li class="list-inner__item">Eleven - eleventh</li>
-                                    <li class="list-inner__item">Twelve - twelfth</li>
-                                 </ol>
-                              </li>
-                           </ol>
-                        </li>
-                        <li class="list-inner__item">Eight - eighth</li>
-                     </ol>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <section id="maps-boxes" class="maps-boxes">
-            <div class="maps-boxes__container">
-               <h2>Подключение и стилизация карт</h2>
-               <div class="form-row">
-                  <div class="yandex-map">
-                     <h3>Бесплатная версия API Яндекс Карты (3.0)</h3>
-                     <div id="map" class="map"></div>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-      </main>
-   </div>
-
-   <script src="./js/swiped-events.min.js"></script>
-   <script src="./js/main.js"></script>
-
-
-</body>
-
+        <script src="./js/swiped-events.min.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
 </html>
