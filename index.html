@@ -16,7 +16,7 @@
 
     <body>
         <div class="wrapper">
-            <header class="header">
+            <header class="header lock-padding">
                 <div class="header__container">
                     <a href="#" class="header__logo"></a>
                     <div class="header__menu menu">
@@ -67,15 +67,15 @@
                         <h2>Модальные окна</h2>
                         <div class="form-row">
 
-                            <!-- вариант №3 -->
+                            <!-- варианты №3 и №4 -->
                             <div class="form-column">
-                                <h3>Модальные окна (CSS, псевдокласс :target)</h3>
+                                <h3>Модальные окна (CSS, псевдокласс :target || JS)</h3>
                                 <div  class="form-column__content">
                                     <div class="form-column__text">
                                         <p>Модальные окна, их еще называют всплывающие окна или попапы от английского (pop-up) - блоки с версткой находятся перед закрывающимся тегом body. Используем якорные ссылки и анимацию.</p>
-                                        <p>Два варианта работы - открытие<a href="#popup-target" class="popup__link"> с помощью CSS псевдокласса :target</a> и, более мощный, с использованием JavaScript.</p>
+                                        <p>Два варианта работы - открытие <a href="#popup-target" class="popup__link">с помощью CSS псевдокласса :target</a> и, более мощный, с использованием <a href="#popup" class="popup__link popup-link">JavaScript</a>.</p>
                                     </div>
-                                    <a href="#popup__image" class="form-column__image popup__link">
+                                    <a href="#popup-image" class="form-column__image popup-link">
                                         <img src="./img/bg-1.jpg" alt="Превью изображения ночного салюта">
                                     </a>
                                 </div>
@@ -654,7 +654,7 @@
         </div>
 
         <div id="popup-target" class="popup">
-            <!-- элемент нужет только при использовании псевдокласса :target -->
+            <!-- элемент нужен только при использовании псевдокласса :target -->
             <a href="#" class="popup__area"></a>
             <div class="popup__body">
                 <div class="popup__content">
@@ -691,20 +691,55 @@
             </div>
         </div>
 
-        <!-- <div class="modals-box">
-            <div class="modal-overlay">
-                <div class="modal-window modal-window--1" data-target="one-popup">
-                    
-                </div>
-                <div class="modal-window modal-window--2" data-target="two-popup">
-                    <h4>Недостатки</h4>
-                    <ol>
-                        <li>Закрытие только по клику на оверлей</li>
-                        <li>Не подходит для попапов внутри попапов</li>
-                    </ol>
+        <div id="popup" class="popup">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <!-- использовании button не подойдет - для закрытия окна нужен href -->
+                    <a href="#" class="popup__close close-popup">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 496.096 496.096">
+                            <path d="M259.41,247.998L493.754,13.654c3.123-3.124,3.123-8.188,0-11.312c-3.124-3.123-8.188-3.123-11.312,0L248.098,236.686
+                    L13.754,2.342C10.576-0.727,5.512-0.639,2.442,2.539c-2.994,3.1-2.994,8.015,0,11.115l234.344,234.344L2.442,482.342
+                    c-3.178,3.07-3.266,8.134-0.196,11.312s8.134,3.266,11.312,0.196c0.067-0.064,0.132-0.13,0.196-0.196L248.098,259.31
+                    l234.344,234.344c3.178,3.07,8.242,2.982,11.312-0.196c2.995-3.1,2.995-8.016,0-11.116L259.41,247.998z"/>
+                        </svg>
+                    </a>
+                    <h3 class="popup__title">Попап открыт с помощью JS</h3>
+                    <div class="popup__text">
+                        <div class="popup__wrap-text">
+                            <h4  class="popup__subtitle popup__subtitle--advantages">Преимущества</h4>
+                            <ol class="popup__list">
+                                <li>Допускается наличие <a href="#popup-inner" class="popup-link">вложенных попапов</a></li>
+                                <li>Фиксация/блокировка контента под областью попапа и оверлея</li>
+                                <li>Скрываем боковой скрол, предотвращаем сдвиг в сторону</li>
+                                <li>Широкий функционал по анимации, закрытие по любому элементу с классом close-popup, оверлею либо клавишей Esc</li>
+                            </ol>
+                        </div>
+                        <div class="popup__wrap-text">
+                            <h4  class="popup__subtitle popup__subtitle--disadvantages">Недостатки</h4>
+                            <ol class="popup__list">                                
+                                <li>Требуется код JS</li></ol>
+                        </div>                    
+                    </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+
+        <div id="popup-image" class="popup">
+            <div class="popup__body">
+                <div class="popup__content popup__content--image">
+                    <img class="close-popup" src="./img/bg-1.jpg" alt="Фото ночного салюта">
+                </div>
+            </div>
+        </div>
+
+        <div id="popup-inner" class="popup">
+            <div class="popup__body">
+                <div class="popup__content popup__content--image">
+                    <img class="close-popup" src="./img/bg-1.jpg" alt="Фото ночного салюта">
+                </div>
+            </div>
+        </div>
+        
 
         <script src="./js/swiped-events.min.js"></script>
         <script src="./js/main.js"></script>

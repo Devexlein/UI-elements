@@ -30,11 +30,26 @@
    overflow-x: hidden;
    transition: all 0.8s;
 }
-/* вариант №3 Mодальное окно с помощью CSS псевдокласса :target */
-.popup:target {
+.popup.open {
    opacity: 1;
    visibility: visible;
 }
+.popup.open .popup__content {
+   opacity: 1;
+   transform: translate(0, 0);
+}
+.popup.open .popup__content {
+   transform: scale(1);
+}
+
+
+
+/* нужен только при использовании псевдокласса :target */
+#popup-target:target {
+   opacity: 1;
+   visibility: visible;
+}
+/* нужен только при использовании псевдокласса :target */
 .popup__area {
    position: absolute;
    width: 100%;
@@ -60,7 +75,15 @@
    transform: perspective(600px) translate(0, -100%) rotateX(45deg);
    transition: all 0.8s;
 }
-.popup:target .popup__content {
+.popup__content--image {
+   padding: 4px;
+   transform: scale(0);
+}
+.popup__content--image img { 
+   border-radius: 4px;
+}
+/* нужен только при использовании псевдокласса :target */
+#popup-target:target .popup__content {
    opacity: 1;
    transform: translate(0, 0);
 }

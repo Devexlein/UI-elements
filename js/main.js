@@ -489,14 +489,18 @@ mobileClose.addEventListener('click', function (e) {
 });
 
 
-//* вариант №3 и №4 Mодальное окно
+//* вариант №4 Mодальные окна
+// коллекция элементов, при клике на которые открывается попап
 const popupLinks = document.querySelectorAll('.popup-link');
 // коллекция форм, при оправке которых открывается попап
 const submitForms = document.querySelectorAll('#free-project, #cost-composition, #more-questions, #application');
 const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll('.lock-padding');
 
+// для исключения двойных нажатий
 let unlock = true;
+
+const timeout = 800;
 
 // определяем текущий попап по нажатой ссылке
 if (popupLinks.length > 0) {
@@ -504,19 +508,22 @@ if (popupLinks.length > 0) {
       const popupLink = popupLinks[i];
       popupLink.addEventListener("click", function (e) {
          const popupName = popupLink.getAttribute('href').replace('#', '');
+         // попап, имя которого совпадает с содержимым href
          const curentPopup = document.getElementById(popupName);
+         // открываем попап
          popupOpen(curentPopup);
          e.preventDefault();
       });
    }
 }
 
-// закрытие попапа при нажатии на кнопку
+// закрытие попапа при нажатии на элемент с классом close-popup
 const popupCloseLink = document.querySelectorAll('.close-popup');
 if (popupCloseLink.length > 0) {
    for (let i = 0; i < popupCloseLink.length; i++) {
       const el = popupCloseLink[i];
       el.addEventListener("click", function (e) {
+         // закрываем попап - ближайшего родителя нажатого элемента с классом close-popup
          popupClose(el.closest('.popup'));
          e.preventDefault();
       });
@@ -526,6 +533,7 @@ if (popupCloseLink.length > 0) {
 // открытие текущего попапа по полученной ссылке
 function popupOpen(curentPopup) {
    if (curentPopup && unlock) {
+      // получаем объект с классом popup, у которого есть класс open
       const popupActive = document.querySelector('.popup.open');
       if (popupActive) {
          popupClose(popupActive, false);
@@ -534,6 +542,7 @@ function popupOpen(curentPopup) {
       }
       curentPopup.classList.add('open');
       curentPopup.addEventListener("click", function (e) {
+         // проверяем клик вне содержимого попапа (закрытие по клику на оверлей)
          if (!e.target.closest('.popup__content')) {
             popupClose(e.target.closest('.popup'));
          }
@@ -605,18 +614,19 @@ document.addEventListener("keydown", function (e) {
    }
 })();
 
-// скрываем скролл, добавляя паддинг body и объектам с position: fixed
+// скрываем скролл, добавляя паддинг body и элементам с position: fixed
 function bodyLock() {
+    // ширина скрола (разница между шириной вьюпорта и элеметами внутри body)
    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 
    if (lockPadding.length > 0) {
       for (let i = 0; i < lockPadding.length; i++) {
          const el = lockPadding[i];
-         el.getElementsByClassName.paddingRight = lockPaddingValue;
+         el.style.paddingRight = lockPaddingValue;
       }
    }
    body.style.paddingRight = lockPaddingValue;
-   body.classList.add('lock');
+   body.classList.add('_lock');
 
    unlock = false;
    setTimeout(function () {
@@ -634,7 +644,7 @@ function bodyUnlock() {
          }
       }
       body.style.paddingRight = '0px';
-      body.classList.remove('lock');
+      body.classList.remove('_lock');
    }, timeout);
 
    unlock = false;
