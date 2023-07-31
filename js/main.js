@@ -390,19 +390,19 @@ window.setInterval(() => {
 
 const btns = document.querySelectorAll('.btn');
 const modalOverlay = document.querySelector('.modal-overlay');
-const modals = document.querySelectorAll('.modal-window');
+const modals = document.querySelectorAll('.modal-show');
 
 btns.forEach((el) => {
     el.addEventListener('click', (e) => {
         let path = e.currentTarget.getAttribute('data-path');
 
         modals.forEach((el) => {
-            el.classList.remove('modal--visible');
+            el.classList.remove('modal-show--visible');
         });
 
         document
             .querySelector(`[data-target="${path}"]`)
-            .classList.add('modal--visible');
+            .classList.add('modal-show--visible');
         modalOverlay.classList.add('modal-overlay--visible');
     });
 });
@@ -413,7 +413,7 @@ modalOverlay.addEventListener('click', (e) => {
     if (e.target == modalOverlay) {
         modalOverlay.classList.remove('modal-overlay--visible');
         modals.forEach((el) => {
-            el.classList.remove('modal--visible');
+            el.classList.remove('modal-show--visible');
         });
     }
 });
@@ -492,8 +492,6 @@ mobileClose.addEventListener('click', function (e) {
 //* вариант №4 Mодальные окна
 // коллекция элементов, при клике на которые открывается попап
 const popupLinks = document.querySelectorAll('.popup-link');
-// коллекция форм, при оправке которых открывается попап
-const submitForms = document.querySelectorAll('#free-project, #cost-composition, #more-questions, #application');
 const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll('.lock-padding');
 
@@ -560,29 +558,6 @@ function popupClose(popupActive, doUnlock = true) {
    }
 }
 
-// вызов попапа успешной отправки формы
-if (submitForms.length > 0) {
-   const successfullyPopup = document.getElementById('successfully-popup');
-
-
-   for (let i = 0; i < submitForms.length; i++) {
-      const submitForm = submitForms[i];
-
-      submitForm.addEventListener("submit", function (e) {
-         e.preventDefault();
-         const message = submitForm.querySelector('.form-box__message');
-         const userPhone = submitForm.querySelector('.form-box__phone').value;
-
-         if (ValidPhone(userPhone)) {
-            popupOpen(successfullyPopup);
-            message.classList.remove('active');
-         } else {
-            message.classList.add('active');
-         };
-      });
-   }
-}
-
 // закрываем попап клавишей Esc
 document.addEventListener("keydown", function (e) {
    if (e.keyCode == 27) {
@@ -592,9 +567,11 @@ document.addEventListener("keydown", function (e) {
    }
 });
 
+// Полифилы
 (function () {
-   // проверяем поддержку 
+   // проверяем поддержку IE свойства closest
    if (!Element.prototype.closest) {
+    // реализуем
       Element.prototype.closest = function (css) {
          var node = this;
          while (node) {
@@ -605,8 +582,9 @@ document.addEventListener("keydown", function (e) {
       };
    }
 })();
+
 (function () {
-   // проверяем поддержку 
+   // проверяем поддержку IE свойства matches
    if (!Element.prototype.matches) {
       Element.prototype.matches = Element.prototype.matchesSelector ||
          Element.prototype.mozmatchesSelector ||

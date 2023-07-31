@@ -1,10 +1,9 @@
-/* вариант №3 Mодальное окно с помощью CSS псевдокласса :target */
+/* вариант №4 Mодальное окно с помощью CSS псевдокласса :target */
 .form-column__content {
    display: flex;
    align-items: center;
 }
-.form-column__text {
-}
+/* .form-column__text {} */
 .popup__link {
    color: tomato;
 }
@@ -15,7 +14,6 @@
 .form-column__image img {
    max-width: 100%;
 }
-
 .popup {
    position: fixed;
    top: 0;
@@ -41,8 +39,6 @@
 .popup.open .popup__content {
    transform: scale(1);
 }
-
-
 
 /* нужен только при использовании псевдокласса :target */
 #popup-target:target {
@@ -72,7 +68,7 @@
    background-color: #fff;
    color: #333;
    opacity: 0;
-   transform: perspective(600px) translate(0, -100%) rotateX(45deg);
+   transform: perspective(600px) translateY(-100%) rotateX(45deg);
    transition: all 0.8s;
 }
 .popup__content--image {
@@ -85,7 +81,7 @@
 /* нужен только при использовании псевдокласса :target */
 #popup-target:target .popup__content {
    opacity: 1;
-   transform: translate(0, 0);
+   transform: translateY(0);
 }
 .popup__close {
    position: absolute;
@@ -98,8 +94,7 @@
 .popup__title {
    margin-bottom: 20px;
 }
-.popup__text {
-}
+/* .popup__text {} */
 .popup__wrap-text {
    margin-bottom: 15px;
 }
@@ -107,10 +102,8 @@
    font-size: 14px;
    color: darkcyan;
 }
-.popup__subtitle--advantages {
-}
-.popup__subtitle--disadvantages {
-}
+/* .popup__subtitle--advantages {} */
+/* .popup__subtitle--disadvantages {} */
 
 /* вариант №2 Mодальное окно, закрытие по свайпу */
 .modal-btn {
@@ -141,7 +134,6 @@
    transform: translate(-50%, -50%);
    background-color: #fff;
 }
-
 .modal__close-btn {
    position: absolute;
    right: 30px;
@@ -156,8 +148,7 @@
 .is-open {
    display: block;
 }
-
-.modal__form {
+.form-modal {
    padding-top: 50px;
    display: flex;
    width: 100%;
@@ -165,16 +156,14 @@
    flex-direction: column;
    justify-content: center;
 }
-
-.modal__form-input {
+.form-modal__input {
    padding: 5px 10px;
    margin-bottom: 24px;
    height: 42px;
    border: 1.5px solid #888;
    border-radius: 4px;
 }
-
-.modal__form-btn {
+.form-modal__btn {
    height: 42px;
 }
 
@@ -192,16 +181,13 @@
       border-top-left-radius: 25px;
       transition: transform 0.5s;
    }
-
    .visible {
       transform: translateY(0);
       transition: transform 0.5s;
    }
-
    .modal__close-btn {
       display: none;
    }
-
    .modal__mobile-close-btn {
       position: absolute;
       left: 0;
@@ -211,7 +197,6 @@
       display: block;
       background-color: transparent;
    }
-
    .modal__mobile-close-btn::before {
       content: "";
       position: absolute;
@@ -222,7 +207,6 @@
       height: 2px;
       background-color: #bfbfbf;
    }
-
    .is-open {
       display: block;
    }
@@ -236,7 +220,6 @@
    padding: 5px 10px;
    border-radius: 4px;
 }
-
 .modal-overlay {
    position: fixed;
    left: 0;
@@ -254,8 +237,7 @@
    z-index: 10;
    transition: all 0.3s ease-in-out;
 }
-
-.modal-window {
+.modal-show {
    padding: 20px;
    width: 300px;
    height: 300px;
@@ -266,31 +248,121 @@
    background-color: #fff;
    border-radius: 4px;
 }
-
 .modal-overlay--visible {
    opacity: 1;
    visibility: visible;
    transition: all 0.3s ease-in-out;
 }
-
-.modal--visible {
+.modal-show--visible {
    display: block;
 }
-
-.modal-window h4,
+.modal-show h4,
 .popup__subtitle {
    margin-bottom: 15px;
    font-weight: 500;
    color: darkcyan;
 }
 
-.modal-window--2 h4,
+.modal-show--2 h4,
 .popup__subtitle--disadvantages {
    color: tomato;
 }
 
-.modal-window ol {
+.modal-show ol {
    padding-left: 15px;
    font-size: 12px;
    line-height: 1.7;
+}
+
+/* вариант №3 Плагин для модальных окон */
+.info {
+   display: flex;
+   align-items: center;
+}
+.info__desc {
+   padding-left: 15px;
+   font-size: 12px;
+}
+.info__condition {
+   padding-left: 15px;
+   font-size: 10px;
+}
+.btns {
+   display: flex;
+   flex-direction: column;
+   row-gap: 20px;
+}
+.modal-window__open-btn {
+   padding: 10px 25px;
+   font-weight: 700;
+   color: #fff;
+   background-color: tomato;
+   border-radius: 4px;
+}
+.modals-box {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 999;
+   background-color: rgba(0, 0, 0, 0.3);
+   overflow-y: auto;
+   overflow-x: hidden;
+   text-align: center;
+   cursor: pointer;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.8s, visibility 0.8s;
+}
+.modals::before {
+   content: "";
+   display: inline-block;
+   vertical-align: middle;
+   height: 100%;
+}
+.modals.is-open {
+   opacity: 1;
+   visibility: visible;
+   transition: opacity 0.8s, visibility 0.8s;
+}
+.modal-window {
+   margin: 50px auto;
+   padding: 20px;
+   position: relative;
+   width: 500px;
+   display: none;
+   vertical-align: middle;
+   background-color: #fff;
+   border-radius: 4px;
+   cursor: default;
+}
+@media (max-width: 575.98px) {
+   .modal-window { 
+      width: 90%;
+   }
+}
+.modal-window.open {
+   display: inline-block;
+}
+.fade {
+   opacity: 0;
+   transition: opacity 0.8s;
+}
+.fade.animate-open {
+   opacity: 1;
+}
+.modal-window__close-btn svg {
+   position: absolute;
+   right: 15px;
+   top: 15px;
+   width: 15px;
+   height: 15px;
+   background-color: transparent;
+}
+.modal-window__content {
+}
+.modal-window__form {
+}
+.modal-btn {
 }
